@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pacman -Sy chaotic-keyring --noconfirm
