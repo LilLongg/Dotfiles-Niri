@@ -26,6 +26,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo cp assets/wireless-regdom /etc/conf.d/wireless-regdom
 sudo cp assets/main.conf /etc/bluetooth/main.conf
 sudo cp assets/zramen /etc/dinit.d/zramen
+sudo cp assets/niri.desktop /usr/share/wayland-sessions/niri.desktop
 
 cd ananicy-cpp
 makepkg -si
