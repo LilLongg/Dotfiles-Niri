@@ -239,11 +239,11 @@ spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "waybar"
 spawn-at-startup "kitty" "--hold" "fastfetch"
 spawn-sh-at-startup "~/.config/niri/scripts/initbg"
-spawn-sh-at-startup "mpd-notification -m ~/Music -t 5"
 spawn-at-startup "avizo-service"
 spawn-at-startup "cbatticon" "-l" "30" "-r" "20" "-i" "symbolic"
 spawn-at-startup "activate-linux"
 spawn-at-startup "protonvpn-app" "--start-minimized"
+spawn-sh-at-startup "sleep 2 && mpd-mpris"
 spawn-sh-at-startup "sleep 2 && vesktop --start-minimized"
 spawn-sh-at-startup "sleep 2 && ferdium --start-minimized"
 spawn-sh-at-startup "sleep 2 && steam -silent -system-composer"
@@ -406,15 +406,14 @@ binds {
 
     Super+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
     Super+Shift+L hotkey-overlay-title="Session Management" { spawn "wlogout" "--protocol" "layer-shell"; }
-    Super+Alt+L hotkey-overlay-title="Hibernate the System" { spawn "systemctl" "hibernate"; }
+    Super+Alt+L hotkey-overlay-title="Hibernate the System" { spawn "loginctl" "hibernate"; }
 
     Super+R repeat=false hotkey-overlay-title="Reload Waybar" { spawn "pkill" "-SIGUSR2" "waybar"; }
-    Super+Shift+R repeat=false hotkey-overlay-title="Soft-reboot the System" { spawn "systemctl" "soft-reboot"; }
-    Super+Alt+R repeat=false hotkey-overlay-title="Reboot the System" { spawn "systemctl" "reboot"; }
+    Super+Shift+R repeat=false hotkey-overlay-title="Reboot the System" { spawn "loginctl" "reboot"; }
     
     Mod+Q repeat=false hotkey-overlay-title="Close Current Window" { close-window; }
     Mod+Shift+Q repeat=false hotkey-overlay-title="Logout of the Session" { quit; }
-    Mod+Alt+Q repeat=false hotkey-overlay-title="Shutdown the System" { spawn "shutdown" "-h" "now"; }
+    Mod+Alt+Q repeat=false hotkey-overlay-title="Shutdown the System" { spawn "loginctl poweroff"; }
     
     Mod+C repeat=false hotkey-overlay-title="Center the Current Column" { center-column; }
     Mod+Shift+C cooldown-ms=150 hotkey-overlay-title="Resize the Current Column" { switch-preset-column-width; }

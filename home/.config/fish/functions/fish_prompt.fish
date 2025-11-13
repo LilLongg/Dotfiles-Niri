@@ -30,7 +30,7 @@ function fish_prompt
     set_color normal
     printf ' at '
     set_color magenta
-    printf '%s' (hostnamectl hostname)
+    printf '%s' (echo $hostname)
     set_color normal
     printf ' in '
 

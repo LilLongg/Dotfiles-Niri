@@ -1,6 +1,9 @@
 #!/usr/bin/fish
 
-sudo cp assets/mkinitcpio.conf /etc/mkinitcpio.conf
+set -l CUR "$PWD"
+
+sudo pacman -S artix-archlinux-support
+sudo pacman-key --populate archlinux
 
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
@@ -9,27 +12,48 @@ sudo pacman -U 'https://geo-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.ta
 sudo pacman -U 'https://geo-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 
 sudo cp assets/pacman.conf /etc/pacman.conf
+sudo cp assets/mkinitcpio.conf /etc/mkinitcpio.conf
 
 sudo pacman -Sy yay
 yay -S $(cat assets/packages.txt)
 
-sudo cp assets/update-db.service /etc/systemd/system/
 sudo cp -r custom-sddm /usr/share/sddm/themes
 sudo cp assets/pixelon.regular.ttf /usr/share/fonts
 echo [Theme]\nCurrent=custom-sddm | sudo tee /etc/sddm.conf
 sudo cp assets/update_db /etc/cron.hourly/
 sudo cp assets/grub /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-sudo cp assets/zram-generator.conf /etc/systemd/zram-generator.conf
 sudo cp assets/wireless-regdom /etc/conf.d/wireless-regdom
 sudo cp assets/main.conf /etc/bluetooth/main.conf
+sudo cp assets/zramen /etc/dinit.d/zramen
+
+cd ananicy-cpp
+makepkg -si
+
+cd ~
+git clone https://aur.archlinux.org/cachyos-ananicy-rules.git
+cd cachyos-ananicy-rules
+makepkg -si
+cd ..
+rm -rf cachyos-ananicy-rules
+
+cd "$CUR"
 
 # Hibernate...
 echo "w /sys/power/image_size - - - - 0" | sudo tee /etc/tmpfiles.d/hibernation_image_size.conf
 echo "259:2" | sudo tee /sys/power/resume
 
-systemctl enable --user mpd mpd-mpris pipewire-pulse wireplumber hypridle
-sudo systemctl enable bluetooth ufw cronie sddm update-db systemd-zram-setup@zram0 systemd-timesyncd
+sudo dinitctl enable bluetoothd
+sudo dinitctl enable ufw
+sudo dinitctl enable cronie
+sudo dinitctl enable ntpd
+sudo dinitctl enable ananicy-cpp
+sudo dinitctl enable turnstiled
+
+dinitctl enable mpd
+dinitctl enable pipewire-pulse
+dinitctl enable wireplumber
+
 sudo ufw enable
 sudo ufw default deny
 
