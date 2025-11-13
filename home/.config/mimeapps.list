@@ -1,0 +1,35 @@
+[Default Applications]
+x-scheme-handler/http=zen.desktop
+x-scheme-handler/https=zen.desktop
+x-scheme-handler/chrome=zen.desktop
+x-scheme-handler/discord=vesktop.desktop
+text/html=zen.desktop
+application/x-extension-htm=zen.desktop
+application/x-extension-html=zen.desktop
+application/x-extension-shtml=zen.desktop
+application/xhtml+xml=zen.desktop
+application/x-extension-xhtml=zen.desktop
+application/x-extension-xht=zen.desktop
+x-scheme-handler/discord=vesktop.desktop
+application/pdf=org.pwmt.zathura.desktop
+image/gif=mpv.desktop
+image/jpeg=viewnior.desktop
+image/png=viewnior.desktop
+image/x-portable-anymap=viewnior.desktop
+application/x-ipynb+json=code.desktop
+image/svg+xml=zen.desktop
+inode/directory=nemo.desktop
+application/x-gnome-saved-search=nemo.desktop
+
+[Added Associations]
+application/pdf=org.pwmt.zathura.desktop;
+image/gif=mpv.desktop;
+image/jpeg=viewnior.desktop
+image/x-portable-anymap=viewnior.desktop;
+image/png=viewnior.desktop
+application/x-ipynb+json=code.desktop;
+text/plain=helix.desktop;
+image/svg+xml=zen.desktop;
+x-scheme-handler/http=zen.desktop;
+x-scheme-handler/https=zen.desktop;
+x-scheme-handler/chrome=zen.desktop;

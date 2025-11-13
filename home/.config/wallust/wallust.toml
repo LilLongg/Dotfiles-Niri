@@ -1,0 +1,11 @@
+backend = "wal"
+color_space = "lchmixed"
+check_contrast = true
+
+[templates]
+kitty = { src = 'kitty.conf', dst = '~/.config/kitty/colors.conf' }
+niri = { src = 'niri.kdl', dst = '~/.config/niri/config.kdl' }
+hyprlock = { src = 'hyprlock.conf', dst = '~/.config/hypr/colors.conf' }
+pywalfox = { src = 'pywalfox.json', dst = '~/.cache/wal/colors.json' }
+cava = { src = 'cava', dst = '~/.config/cava/config' }
+zathura = { src = 'zathura-colors', dst = '~/.config/zathura/zathura-colors' }

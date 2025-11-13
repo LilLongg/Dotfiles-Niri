@@ -1,0 +1,18 @@
+#!/usr/bin/fish
+
+set -l IMG_PATH ~/.current_wpp
+
+if not test -f $IMG_PATH
+    $HOME/.config/niri/scripts/bgaction (find ~/Wallpaper/* | shuf | head -n1)
+else
+    if test -f ~/.wppvidlock
+        mpvpaper -o "--loop-playlist --hwdec=vaapi --panscan=1.0" '*' $IMG_PATH >/dev/null &
+    else
+        swww-daemon >/dev/null &
+        swww img --transition-type random $IMG_PATH >/dev/null
+    end
+
+    set -l ORIGIN (readlink ~/.current_wpp)
+    set -l FILENAME (basename "$ORIGIN")
+    ~/.config/niri/scripts/swaybg_blur.sh "$FILENAME"
+end
