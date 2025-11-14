@@ -6,7 +6,7 @@ AlignArrayOfStructures: None
 AlignConsecutiveAssignments:
   Enabled: true
   AcrossEmptyLines: false
-  AcrossComments: true
+  AcrossComments: false
   AlignCompound: true
   AlignFunctionDeclarations: true
   AlignFunctionPointers: true
@@ -14,7 +14,7 @@ AlignConsecutiveAssignments:
 AlignConsecutiveBitFields:
   Enabled: true
   AcrossEmptyLines: false
-  AcrossComments: true
+  AcrossComments: false
   AlignCompound: true
   AlignFunctionDeclarations: true
   AlignFunctionPointers: true
@@ -22,7 +22,7 @@ AlignConsecutiveBitFields:
 AlignConsecutiveDeclarations:
   Enabled: true
   AcrossEmptyLines: false
-  AcrossComments: true
+  AcrossComments: false
   AlignCompound: true
   AlignFunctionDeclarations: true
   AlignFunctionPointers: true
@@ -30,7 +30,7 @@ AlignConsecutiveDeclarations:
 AlignConsecutiveMacros:
   Enabled: true
   AcrossEmptyLines: false
-  AcrossComments: true
+  AcrossComments: false
   AlignCompound: true
   AlignFunctionDeclarations: true
   AlignFunctionPointers: true
@@ -38,13 +38,13 @@ AlignConsecutiveMacros:
 AlignConsecutiveShortCaseStatements:
   Enabled: true
   AcrossEmptyLines: false
-  AcrossComments: true
+  AcrossComments: false
   AlignCaseArrows: true
   AlignCaseColons: true
 AlignConsecutiveTableGenBreakingDAGArgColons:
   Enabled: true
   AcrossEmptyLines: false
-  AcrossComments: true
+  AcrossComments: false
   AlignCompound: true
   AlignFunctionDeclarations: true
   AlignFunctionPointers: true
@@ -52,7 +52,7 @@ AlignConsecutiveTableGenBreakingDAGArgColons:
 AlignConsecutiveTableGenCondOperatorColons:
   Enabled: true
   AcrossEmptyLines: false
-  AcrossComments: true
+  AcrossComments: false
   AlignCompound: true
   AlignFunctionDeclarations: true
   AlignFunctionPointers: true
@@ -60,7 +60,7 @@ AlignConsecutiveTableGenCondOperatorColons:
 AlignConsecutiveTableGenDefinitionColons:
   Enabled: true
   AcrossEmptyLines: false
-  AcrossComments: true
+  AcrossComments: false
   AlignCompound: true
   AlignFunctionDeclarations: true
   AlignFunctionPointers: true

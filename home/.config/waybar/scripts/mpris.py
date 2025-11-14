@@ -85,8 +85,7 @@ running_status = subprocess.run(
 ).stdout.strip()
 running_icon = " " if running_status == "Playing" else " "
 
-if re.match("firefox*", active_player):
-    active_player = "firefox"
+active_player = active_player.split(".")[0]
 player_icon = {"mpd": "󰝚 ", "firefox": "󰈹 "}
 
 artist_len = len(data["artist"])
