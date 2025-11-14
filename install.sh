@@ -53,6 +53,7 @@ sudo dinitctl enable ntpd
 sudo dinitctl enable ananicy-cpp
 sudo dinitctl enable turnstiled
 sudo dinitctl enable backlight
+sudo dinitctl enable power-profiles-daemon
 
 dinitctl enable mpd
 dinitctl enable pipewire-pulse
