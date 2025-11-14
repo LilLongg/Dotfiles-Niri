@@ -1,10 +1,12 @@
 7zip
 activate-linux
 advcpmv
+ananicy-cpp-dinit
 ani-cli
 artix-archlinux-support
 avizo
 aylurs-gtk-shell
+backlight-dinit
 base
 base-devel
 bash-completion
@@ -90,7 +92,6 @@ mpd-mpris
 mpv
 mpv-mpris
 mpvpaper
-musnify-mpd
 nemo
 nemo-preview
 neovim

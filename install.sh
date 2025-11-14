@@ -52,6 +52,7 @@ sudo dinitctl enable cronie
 sudo dinitctl enable ntpd
 sudo dinitctl enable ananicy-cpp
 sudo dinitctl enable turnstiled
+sudo dinitctl enable backlight
 
 dinitctl enable mpd
 dinitctl enable pipewire-pulse
