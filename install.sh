@@ -17,6 +17,8 @@ sudo cp assets/mkinitcpio.conf /etc/mkinitcpio.conf
 sudo pacman -Sy yay
 yay -S $(cat assets/packages.txt)
 
+cargo install mpris-notifier
+
 sudo cp -r custom-sddm /usr/share/sddm/themes
 sudo cp assets/pixelon.regular.ttf /usr/share/fonts
 echo [Theme]\nCurrent=custom-sddm | sudo tee /etc/sddm.conf
@@ -42,7 +44,7 @@ cd "$CUR"
 
 # Hibernate...
 echo "w /sys/power/image_size - - - - 0" | sudo tee /etc/tmpfiles.d/hibernation_image_size.conf
-echo "259:2" | sudo tee /sys/power/resume
+echo "w /sys/power/resume - - - - 259:2" | sudo tee /etc/tmpfiles.d/hibernation_resume.conf
 
 sudo dinitctl enable bluetoothd
 sudo dinitctl enable ufw
