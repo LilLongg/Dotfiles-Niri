@@ -1,5 +1,5 @@
 if status is-interactive
-    cat ~/.cache/wal/sequences
+    cat ~/.cache/wallust/sequences
     alias rm="trash"
 end
 

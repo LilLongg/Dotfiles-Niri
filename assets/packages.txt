@@ -73,9 +73,11 @@ libreoffice-fresh
 libva-intel-driver
 libva-utils
 libvdpau-va-gl
+linux
 linux-cachyos
 linux-cachyos-headers
 linux-firmware
+linux-headers
 linux-zen
 linux-zen-headers
 lsd
@@ -94,7 +96,7 @@ mpvpaper
 nemo
 nemo-preview
 neovim
-networkmanager
+networkmanager-iwd
 ninja
 niri
 noto-fonts-cjk
