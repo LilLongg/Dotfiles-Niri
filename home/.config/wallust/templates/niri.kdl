@@ -241,11 +241,11 @@ spawn-at-startup "kitty" "--hold" "fastfetch"
 spawn-sh-at-startup "~/.config/niri/scripts/initbg"
 spawn-at-startup "avizo-service"
 spawn-at-startup "fcitx5"
-spawn-at-startup "swww-daemon"
 spawn-at-startup "mpris-notifier"
 spawn-at-startup "cbatticon" "-l" "30" "-r" "20" "-i" "symbolic"
 spawn-at-startup "activate-linux"
 spawn-at-startup "protonvpn-app" "--start-minimized"
+spawn-sh-at-startup "sleep 2 && swww-daemon"
 spawn-sh-at-startup "sleep 2 && mpd-mpris"
 spawn-sh-at-startup "sleep 2 && vesktop --start-minimized"
 spawn-sh-at-startup "sleep 2 && ferdium --start-minimized"
@@ -434,7 +434,7 @@ binds {
 
     Mod+O repeat=false { toggle-overview; }
     Mod+Shift+O repeat=false { toggle-window-rule-opacity; }
-    Mod+Alt+O repeat=false { spawn-sh "kill $(pidof swww-daemon) && swww-daemon"; }
+    Mod+Alt+O repeat=false { spawn-sh "kill $(pidof swww-daemon) && sleep 1 && swww-daemon"; }
 
     Mod+F repeat=false hotkey-overlay-title="Open File Manager" { spawn "nemo"; }
 

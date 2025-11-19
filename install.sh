@@ -60,7 +60,7 @@ dinitctl enable wireplumber
 sudo ufw enable
 sudo ufw default deny
 
-mkdir -p ~/.cache/wpp ~/Pictures/Screenshots ~/Videos/Records
+mkdir -p ~/.cache/wpp ~/Pictures/Screenshots ~/Videos/Records ~/.venv
 sudo ln -sf /usr/bin/kitty /usr/bin/gnome-terminal
 rm ~/.config/fish/config.fish ~/.config/fish/fish_variables
 stow home --no-folding
