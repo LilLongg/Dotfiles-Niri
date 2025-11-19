@@ -17,7 +17,7 @@ switch (string split . $IMG_PATH | tail -n1)
         if not test -f $IMG_CACHE
             ffmpeg -i $IMG_PATH -vf "select=eq(n\,0)" -q:v 1 $IMG_CACHE
         end
-        mpvpaper -o "--loop-playlist --hwdec=vaapi --panscan=1.0" '*' $IMG_PATH >/dev/null &
+        mpvpaper -o "--load-scripts=no --loop-playlist --hwdec=vaapi --panscan=1.0" '*' $IMG_PATH >/dev/null &
     case gif GIF
         if test -f $LOCK_FILE
             rm $LOCK_FILE
@@ -26,6 +26,7 @@ switch (string split . $IMG_PATH | tail -n1)
             ffmpeg -i $IMG_PATH -vframes 1 $IMG_CACHE
         end
         swww query || swww-daemon &
+        sleep 0.5
         swww img --transition-type random $IMG_PATH >/dev/null
     case '*'
         if test -f $LOCK_FILE
@@ -35,6 +36,7 @@ switch (string split . $IMG_PATH | tail -n1)
             ffmpeg -i $IMG_PATH $IMG_CACHE
         end
         swww query || swww-daemon &
+        sleep 0.5
         swww img --transition-type random $IMG_PATH >/dev/null
 end
 
