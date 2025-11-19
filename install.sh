@@ -33,6 +33,7 @@ sudo cp assets/ananicy-cpp /etc/dinit.d/ananicy-cpp
 
 cd ananicy-cpp
 makepkg -si
+yay -S cachyos-ananicy-rules-git
 
 cd "$CUR"
 
