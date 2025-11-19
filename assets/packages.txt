@@ -1,7 +1,6 @@
 7zip
 activate-linux
 advcpmv
-ananicy-cpp-dinit
 ani-cli
 artix-archlinux-support
 avizo

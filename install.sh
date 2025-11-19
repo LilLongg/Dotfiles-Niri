@@ -29,22 +29,15 @@ sudo cp assets/wireless-regdom /etc/conf.d/wireless-regdom
 sudo cp assets/main.conf /etc/bluetooth/main.conf
 sudo cp assets/zramen /etc/dinit.d/zramen
 sudo cp assets/niri.desktop /usr/share/wayland-sessions/niri.desktop
+sudo cp assets/ananicy-cpp /etc/dinit.d/ananicy-cpp
 
 cd ananicy-cpp
 makepkg -si
-
-cd ~
-git clone https://aur.archlinux.org/cachyos-ananicy-rules.git
-cd cachyos-ananicy-rules
-makepkg -si
-cd ..
-rm -rf cachyos-ananicy-rules
 
 cd "$CUR"
 
 # Hibernate...
 echo "w /sys/power/image_size - - - - 0" | sudo tee /etc/tmpfiles.d/hibernation_image_size.conf
-echo "w /sys/power/resume - - - - 259:2" | sudo tee /etc/tmpfiles.d/hibernation_resume.conf
 
 sudo dinitctl enable bluetoothd
 sudo dinitctl enable ufw
@@ -54,6 +47,10 @@ sudo dinitctl enable ananicy-cpp
 sudo dinitctl enable turnstiled
 sudo dinitctl enable backlight
 sudo dinitctl enable power-profiles-daemon
+sudo dinitctl enable zramen
+
+echo "Wait a bit..."
+sleep 5
 
 dinitctl enable mpd
 dinitctl enable pipewire-pulse
