@@ -6,4 +6,4 @@ if not test -f "$BLUR_CACHE_PATH"
     magick convert -scale 10% -blur 0x1.0 -resize 1000% "$CACHE_IMG" "$BLUR_CACHE_PATH"
 end
 
-swaybg -i "$BLUR_CACHE_PATH"
+swaybg -i "$BLUR_CACHE_PATH" &

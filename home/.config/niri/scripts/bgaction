@@ -26,7 +26,6 @@ switch (string split . $IMG_PATH | tail -n1)
             ffmpeg -i $IMG_PATH -vframes 1 $IMG_CACHE
         end
         swww query || swww-daemon &
-        sleep 0.5
         swww img --transition-type random $IMG_PATH >/dev/null
     case '*'
         if test -f $LOCK_FILE
@@ -36,7 +35,6 @@ switch (string split . $IMG_PATH | tail -n1)
             ffmpeg -i $IMG_PATH $IMG_CACHE
         end
         swww query || swww-daemon &
-        sleep 0.5
         swww img --transition-type random $IMG_PATH >/dev/null
 end
 

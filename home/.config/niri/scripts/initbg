@@ -12,7 +12,7 @@ else
     if test -f ~/.wppvidlock
         mpvpaper -o "--load-scripts=no --loop-playlist --hwdec=vaapi --panscan=1.0" '*' $IMG_PATH >/dev/null &
     else
-        swww-daemon >/dev/null &
+        swww-daemon &
         swww img --transition-type random $IMG_PATH >/dev/null
     end
 end
