@@ -224,7 +224,7 @@ environment {
     MOZ_ENABLE_WAYLAND "1"
     CRYTOGRAPHY_OPENSSL_NO_LEGACY "1"
     EDITOR "helix"
-    VISUAL "code"
+    VISUAL "zeditor"
     MANPAGER "nvim +Man!"
 }
 
@@ -458,7 +458,7 @@ binds {
     Mod+I repeat=false hotkey-overlay-title="Open Web Browser" { spawn "zen-browser"; }
     Mod+Shift+I repeat=false hotkey-overlay-title="Open Social Media" { spawn "ferdium"; }
     Mod+Alt+I repeat=false hotkey-overlay-title="Open Social Media" { spawn "vesktop"; }
-    Mod+E repeat=false hotkey-overlay-title="Open Text Editor" { spawn "code"; }
+    Mod+E repeat=false hotkey-overlay-title="Open Text Editor" { spawn "zeditor"; }
 
     Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Mute for Volume" { spawn "volumectl" "toggle-mute"; }
     Mod+Alt+M repeat=false hotkey-overlay-title=null { spawn "volumectl" "-m" "toggle-mute"; }

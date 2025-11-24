@@ -1,6 +1,7 @@
 7zip
 activate-linux
 advcpmv
+alsa-firmware
 ani-cli
 artix-archlinux-support
 avizo
@@ -129,6 +130,7 @@ rust
 sddm-dinit
 shfmt
 slurp
+sof-firmware
 spotdl
 steam
 stow
@@ -178,6 +180,7 @@ yazi
 yt-dlp
 zathura
 zathura-pdf-mupdf
+zed
 zellij
 zoxide
 zramen-dinit
