@@ -34,29 +34,30 @@
     ),
     song_table_format: [
         (
+            prop: (kind: Property(Duration),
+                default: (kind: Text("-"))
+            ),
+            width: "10%",
+        ),
+        (
             prop: (kind: Property(Artist),
                 default: (kind: Text("Unknown"))
             ),
-            width: "30%",
+            width: "40%",
+            alignment: Right,
+        ),
+        (
+            prop: (kind: Text("-"),
+                default: (kind: Text("-"))
+            ),
+            width: "1",
+            alignment: Center,
         ),
         (
             prop: (kind: Property(Title),
                 default: (kind: Text("Unknown"))
             ),
-            width: "35%",
-        ),
-        (
-            prop: (kind: Property(Album), style: (fg: "white"),
-                default: (kind: Text("Unknown Album"), style: (fg: "white"))
-            ),
-            width: "35%",
-        ),
-        (
-            prop: (kind: Property(Duration),
-                default: (kind: Text("-"))
-            ),
-            width: "10%",
-            alignment: Right,
+            width: "50%",
         ),
     ],
     layout: Split(
@@ -107,27 +108,6 @@
             ),
         ],
     ),
-    // layout: Split(
-    //     direction: Vertical,
-    //     panes: [
-    //         (
-    //             pane: Pane(Header),
-    //             size: "2",
-    //         ),
-    //         (
-    //             pane: Pane(Tabs),
-    //             size: "3",
-    //         ),
-    //         (
-    //             pane: Pane(TabContent),
-    //             size: "100%",
-    //         ),
-    //         (
-    //             pane: Pane(ProgressBar),
-    //             size: "1",
-    //         ),
-    //     ],
-    // ),
     header: (
         rows: [
             (
