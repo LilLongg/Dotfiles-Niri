@@ -15,10 +15,10 @@
         active_style: (fg: "black", bg: "blue", modifiers: "Bold"),
         inactive_style: (),
     ),
-    highlighted_item_style: (fg: "blue", modifiers: "Bold"),
+    highlighted_item_style: (fg: "yellow", modifiers: "Bold"),
     current_item_style: (fg: "black", bg: "blue", modifiers: "Bold"),
-    borders_style: (fg: "blue"),
-    highlight_border_style: (fg: "blue"),
+    borders_style: (fg: "#81a1c1"),
+    highlight_border_style: (fg: "#81a1c1"),
     symbols: (song: "󰝚 ", dir: " ", playlist: "󰲸 ", marker: "* ", ellipsis: "..."),
     progress_bar: (
         symbols: ["-", ">", " "],
@@ -35,12 +35,14 @@
     song_table_format: [
         (
             prop: (kind: Property(Duration),
+                style: (fg: "blue"),
                 default: (kind: Text("-"))
             ),
             width: "10%",
         ),
         (
             prop: (kind: Property(Artist),
+                style: (fg: "magenta"),
                 default: (kind: Text("Unknown"))
             ),
             width: "40%",
@@ -55,6 +57,7 @@
         ),
         (
             prop: (kind: Property(Title),
+                style: (fg: "cyan"),
                 default: (kind: Text("Unknown"))
             ),
             width: "50%",
@@ -117,8 +120,8 @@
                     (kind: Text(">"), style: (fg: "yellow", modifiers: "Bold"))
                 ],
                 center: [
-                    (kind: Property(Song(Title)), style: (modifiers: "Bold"),
-                        default: (kind: Text("No Song"), style: (modifiers: "Bold"))
+                    (kind: Property(Song(Title)), style: (fg: "blue", modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (fg: "blue", modifiers: "Bold"))
                     )
                 ],
                 right: [
@@ -127,20 +130,22 @@
             ),
             (
                 left: [
+                    (kind: Text("[ ")),
                     (kind: Property(Status(Elapsed))),
                     (kind: Text(" / ")),
                     (kind: Property(Status(Duration))),
-                    (kind: Text(" (")),
+                    (kind: Text(" | ")),
                     (kind: Property(Status(Bitrate))),
-                    (kind: Text(" kbps)"))
+                    (kind: Text(" kbps")),
+                    (kind: Text(" ]")),
                 ],
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "#88c0d0", modifiers: "Bold"),
-                        default: (kind: Text("Unknown Artist"), style: (fg: "#88c0d0", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "magenta", modifiers: "Bold"),
+                        default: (kind: Text("Unknown Artist"), style: (fg: "magenta", modifiers: "Bold"))
                     ),
                     (kind: Text(" - ")),
-                    (kind: Property(Song(Album)),style: (fg: "#81a1c1" ),
-                        default: (kind: Text("Unknown Album"), style: (fg: "#81a1c1", modifiers: "Bold"))
+                    (kind: Property(Song(Album)), style: (fg: "cyan" ),
+                        default: (kind: Text("Unknown Album"), style: (fg: "cyan", modifiers: "Bold"))
                     )
                 ],
                 right: [
