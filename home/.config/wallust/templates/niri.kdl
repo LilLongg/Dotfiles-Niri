@@ -448,8 +448,13 @@ binds {
     Mod+Shift+bracketleft hotkey-overlay-title="Media go back 10 seconds" { spawn-sh "~/.config/niri/scripts/playerctl.py seek-bw 10"; }
     Mod+Shift+bracketright hotkey-overlay-title="Media move up 10 seconds" { spawn-sh "~/.config/niri/scripts/playerctl.py seek-fw 10"; }
 
-    Mod+S repeat=false hotkey-overlay-title="Take a Screenshot" { spawn "flameshot" "gui" "-c"; }
-    Mod+Shift+S repeat=false hotkey-overlay-title=null { spawn "flameshot" "gui" "--region" "1920x1200+0+0" "-c"; }
+    Mod+S repeat=false hotkey-overlay-title="Take a Screenshot" { screenshot; }
+    Mod+Shift+S repeat=false hotkey-overlay-title=null { screenshot-window; }
+    Mod+Alt+S repeat=false hotkey-overlay-title=null { screenshot-screen; }
+    F11 repeat=false hotkey-overlay-title=null { spawn "flameshot" "gui" "-c"; }
+    Shift+F11 repeat=false hotkey-overlay-title=null { spawn "flameshot" "gui" "--region" "1920x1200+0+0" "-c"; }
+    Print repeat=false hotkey-overlay-title=null { spawn "flameshot" "gui" "-p" "~/Pictures/Screenshots"; }
+    Shift+Print repeat=false hotkey-overlay-title=null { spawn "flameshot" "gui" "--region" "1920x1200+0+0" "-p" "~/Pictures/Screenshots"; }
     Mod+V repeat=false hotkey-overlay-title="Record the Screen" { spawn-sh "~/.config/niri/scripts/record"; }
     Mod+Shift+V repeat=false hotkey-overlay-title=null { spawn "sh" "-c" "~/.config/niri/scripts/record" "select"; }
     
@@ -577,3 +582,5 @@ binds {
     // which ensures niri always processes them, even when an inhibitor is active.
     Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 }
+
+screenshot-path "~/Pictures/Screenshots/%Y%m%d_%Hh%Mm%Ss.png"
