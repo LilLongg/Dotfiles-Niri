@@ -43,7 +43,6 @@ fcitx5-unikey
 ferdium-bin
 ffmpeg
 file-roller
-firefox
 fish
 flameshot
 fzf

@@ -156,6 +156,7 @@
       "type": "disk",
       "key": "│ ├",
       "keyColor": "green",
+      "format": "{20}: {1} / {2} ({3}) - {9}",
     },
     {
       "type": "memory",
