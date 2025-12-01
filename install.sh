@@ -27,7 +27,7 @@ sudo cp assets/grub /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo cp assets/wireless-regdom /etc/conf.d/wireless-regdom
 sudo cp assets/main.conf /etc/bluetooth/main.conf
-sudo cp assets/zramen /etc/dinit.d/zramen
+sudo cp assets/NetworkManager /etc/dinit.d/NetworkManager
 sudo cp assets/niri.desktop /usr/share/wayland-sessions/niri.desktop
 sudo cp assets/ananicy-cpp /etc/dinit.d/ananicy-cpp
 
@@ -49,13 +49,6 @@ sudo dinitctl enable turnstiled
 sudo dinitctl enable backlight
 sudo dinitctl enable power-profiles-daemon
 sudo dinitctl enable zramen
-
-echo "Wait a bit..."
-sleep 5
-
-dinitctl enable mpd
-dinitctl enable pipewire-pulse
-dinitctl enable wireplumber
 
 sudo ufw enable
 sudo ufw default deny

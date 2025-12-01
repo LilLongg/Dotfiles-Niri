@@ -1,0 +1,7 @@
+type            = process
+command         = /usr/bin/NetworkManager -n
+smooth-recovery = true
+depends-on      = dbus
+depends-on      = pre-network.target
+depends-on      = iwd
+before          = network.target

@@ -24,6 +24,7 @@ chaotic-mirrorlist
 cliphist
 cmake
 cronie-dinit
+dbus-dinit
 dinit
 downgrade
 dua-cli
@@ -150,7 +151,6 @@ typescript-language-server
 typst
 typstyle-bin
 ueberzugpp
-ufw
 ufw-dinit
 uv
 vdpauinfo
