@@ -8,7 +8,7 @@ ICON_SIZE=$(echo "scale=1; (1080 * 3) / 150" | bc)
 ADJUST_ICON_SIZE=$(echo "$icon_size" | awk '{if ($1 < 15) $1 = 20; if ($1 > 25) $1 = 25; print $1}')
 ROFI_OVERRIDE="element-icon{size:${ADJUST_ICON_SIZE}%;}"
 
-mapfile -d '' PICS < <(find -L "${WPP_DIR}" -type f -print0)
+mapfile -d '' PICS < <(find -L "${WPP_DIR}" -type f -print0 | sort -z)
 RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
 RANDOM_PIC_ICON="$HOME/.config/hypr/asset/RANDOM_IMG.JPG"
 RANDOM_PIC_NAME=" Random"

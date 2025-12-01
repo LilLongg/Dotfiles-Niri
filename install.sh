@@ -37,6 +37,10 @@ yay -S cachyos-ananicy-rules-git
 
 cd "$CUR"
 
+cd zen-browser
+makepkg -si
+cd "$CUR"
+
 # Hibernate...
 echo "w /sys/power/image_size - - - - 0" | sudo tee /etc/tmpfiles.d/hibernation_image_size.conf
 
