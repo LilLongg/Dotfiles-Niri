@@ -30,6 +30,8 @@ sudo cp assets/main.conf /etc/bluetooth/main.conf
 sudo cp assets/NetworkManager /etc/dinit.d/NetworkManager
 sudo cp assets/niri.desktop /usr/share/wayland-sessions/niri.desktop
 sudo cp assets/ananicy-cpp /etc/dinit.d/ananicy-cpp
+sudo mkdir /etc/elogind/system-sleep
+sudo cp assets/lock.sh /etc/elogind/system-sleep/lock.sh
 
 cd ananicy-cpp
 makepkg -si
