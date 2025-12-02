@@ -10,7 +10,7 @@ ROFI_OVERRIDE="element-icon{size:${ADJUST_ICON_SIZE}%;}"
 
 mapfile -d '' PICS < <(find -L "${WPP_DIR}" -type f -print0 | sort -z)
 RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
-RANDOM_PIC_ICON="$HOME/.config/hypr/asset/RANDOM_IMG.JPG"
+RANDOM_PIC_ICON="$HOME/.config/hypr/assets/RANDOM_IMG.JPG"
 RANDOM_PIC_NAME=" Random"
 
 ROFI_CMD="rofi -i -show -dmenu -config $ROFI_THEME -theme-str $ROFI_OVERRIDE"
