@@ -14,7 +14,7 @@ switch (string split . $IMG_PATH | tail -n1)
             swww kill
             touch $LOCK_FILE
         end
-        if test $IMG_PATH -nt $IMG_CACHE
+        if not test -f $IMG_CACHE; or test $IMG_PATH -nt $IMG_CACHE
             ffmpeg -i $IMG_PATH -vf "select=eq(n\,0)" -q:v 1 $IMG_CACHE
         end
         mpvpaper -o "--load-scripts=no --loop-playlist --hwdec=vaapi --panscan=1.0" '*' $IMG_PATH >/dev/null &
@@ -22,7 +22,7 @@ switch (string split . $IMG_PATH | tail -n1)
         if test -f $LOCK_FILE
             rm $LOCK_FILE
         end
-        if test $IMG_PATH -nt $IMG_CACHE
+        if not test -f $IMG_CACHE; or test $IMG_PATH -nt $IMG_CACHE
             ffmpeg -i $IMG_PATH -vframes 1 $IMG_CACHE
         end
         swww query || swww-daemon &
@@ -31,7 +31,7 @@ switch (string split . $IMG_PATH | tail -n1)
         if test -f $LOCK_FILE
             rm $LOCK_FILE
         end
-        if test $IMG_PATH -nt $IMG_CACHE
+        if not test -f $IMG_CACHE; or test $IMG_PATH -nt $IMG_CACHE
             ffmpeg -i $IMG_PATH $IMG_CACHE
         end
         swww query || swww-daemon &

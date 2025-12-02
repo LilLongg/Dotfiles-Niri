@@ -22,7 +22,7 @@ menu() {
 		PIC_NAME=$(basename "$PIC")
 		PIC_CACHE="$HOME/.cache/wpp/$PIC_NAME.JPG"
 
-		if [[ "$PIC" -nt "$PIC_CACHE" ]]; then
+		if [[ ! -f "$PIC_CACHE" || "$PIC" -nt "$PIC_CACHE" ]]; then
 			if [[ "$PIC_NAME" =~ \.(gif|GIF)$ ]]; then
 				ffmpeg -i $PIC -vframes 1 $PIC_CACHE
 			elif [[ "$PIC_NAME" =~ \.(mp4|MP$) ]]; then
