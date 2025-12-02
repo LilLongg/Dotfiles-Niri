@@ -342,13 +342,6 @@ window-rule {
 }
 
 window-rule {
-    match is-floating=true
-
-    min-width 1064
-    max-width 1280
-}
-
-window-rule {
     match app-id="mpv"
 
     open-fullscreen true
