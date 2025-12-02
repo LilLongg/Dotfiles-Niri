@@ -80,7 +80,9 @@ class Mpdctl(Playerctl):
         subprocess.run(["mpc", "seek", f"-{offset}"])
 
 
-player_controller = Mpdctl() if active_player == "mpd" else Playerctl(active_player)
+player_controller = (
+    Mpdctl() if active_player.startswith("mpd") else Playerctl(active_player)
+)
 
 match sys.argv[1]:
     case "stop":
