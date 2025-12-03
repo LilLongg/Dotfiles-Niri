@@ -398,7 +398,7 @@ binds {
 
     Mod+A hotkey-overlay-title="Run Application Launcher" { spawn "rofi" "-show" "drun"; }
     Mod+Shift+A hotkey-overlay-title="Change the Wallpaper" { spawn-sh "~/.config/niri/scripts/select_wpp.sh"; }
-    Mod+Alt+A hotkey-overlay-title="See clipboard history" { spawn-sh "rofi -modi clipboard:/home/TNonggChann/.config/niri/scripts/cliphist-rofi-img -show clipboard -show-icons -theme-str '#window {height: 50%; }' -theme-str '#window {width: 65%; }' -theme-str '#element-icon {size: 10ch; }'"; }
+    Mod+Alt+A hotkey-overlay-title="See clipboard history" { spawn-sh "~/.config/niri/scripts/cliphist-rofi-img | rofi -dmenu -display-columns 2 -show-icons -theme-str '#window {height: 50%; }' -theme-str '#window {width: 65%; }' -theme-str '#element-icon {size: 10ch; }' | cliphist decode | wl-copy"; }
 
     Super+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
     Super+Shift+L hotkey-overlay-title="Session Management" { spawn "wlogout" "--protocol" "layer-shell"; }
