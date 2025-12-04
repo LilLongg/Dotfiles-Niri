@@ -27,7 +27,7 @@ sudo cp assets/grub /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo cp assets/wireless-regdom /etc/conf.d/wireless-regdom
 sudo cp assets/main.conf /etc/bluetooth/main.conf
-sudo cp assets/NetworkManager /etc/dinit.d/NetworkManager
+sudo cp assets/mpd-mpris /etc/dinit.d/user/mpd-mpris
 sudo cp assets/niri.desktop /usr/share/wayland-sessions/niri.desktop
 sudo cp assets/ananicy-cpp /etc/dinit.d/ananicy-cpp
 

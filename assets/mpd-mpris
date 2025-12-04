@@ -1,0 +1,5 @@
+type            = process
+command         = /usr/bin/mpd-mpris
+smooth-recovery = true
+depends-on      = mpd
+log-type        = buffer
