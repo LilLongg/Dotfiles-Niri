@@ -1,0 +1,5 @@
+@define-color background {{ color0 }};
+@define-color foreground {{ foreground }};
+@define-color highlight {{ color1 }};
+@define-color border {{ color8 }};
+@define-color accent {{ cursor }};

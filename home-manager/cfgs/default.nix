@@ -1,0 +1,31 @@
+{
+  imports = [
+    ./bat
+    ./clang-format
+    ./colors
+    ./fastfetch
+    ./fcitx5
+    ./ferdium
+    ./fish
+    ./flameshot
+    ./floorp
+    ./fonts
+    ./git
+    ./helix
+    ./hypr
+    ./kitty
+    ./lutris
+    ./media
+    ./niri
+    ./obs-studio
+    ./onlyoffice
+    ./rofi
+    ./services
+    ./theme
+    ./vesktop
+    ./vscode
+    ./waybar
+    ./wlogout
+    ./xdg
+  ];
+}

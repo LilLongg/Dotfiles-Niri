@@ -1,0 +1,20 @@
+{
+  imports = [
+    ./bluetooth.nix
+    ./bootloader.nix
+    ./env.nix
+    ./firewall.nix
+    ./fonts.nix
+    ./hw-accel.nix
+    ./network.nix
+    ./niri.nix
+    ./nix.nix
+    ./pipewire.nix
+    ./sddm.nix
+    ./services.nix
+    ./steam.nix
+    ./users.nix
+    ./virtualisation.nix
+    ./zram-swap.nix
+  ];
+}

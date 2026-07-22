@@ -1,0 +1,18 @@
+layout {
+    border {
+		active-gradient from="{{ color1 | saturate(0.6) }}" to="{{ color6 | saturate(0.6) }}" angle=45 in="oklch longer hue"
+		inactive-color "{{ cursor }}"
+		urgent-color "{{ color9 | lighten(0.2) | saturate(0.6) }}"
+    }
+}
+
+window-rule {
+	match is-window-cast-target=true
+
+	border {
+	    width 3
+		active-gradient from="{{ color1 | saturate(0.6) }}" to="{{ color6 | saturate(0.6) }}" angle=45 in="oklch longer hue"
+		inactive-color "{{ color9 | lighten(0.2) | saturate(0.6) }}"
+		urgent-color "{{ color9 | lighten(0.2) | saturate(0.6) }}"
+	}
+}

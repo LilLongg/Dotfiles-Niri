@@ -1,0 +1,182 @@
+@import "colors.css";
+
+#waybar {
+  all: unset;
+}
+
+#backlight,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#custom-cava_mviz,
+#custom-launch_app,
+#custom-mpris,
+#custom-power_btn,
+#custom-record,
+#custom-weather,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#workspaces {
+  all: unset;
+  font-family: "Unifont", "Symbols Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+  min-height: 0;
+  background: alpha(@background, 0.9);
+  opacity: 0.9;
+  color: @accent;
+  padding: 0px 7.5px;
+  margin-top: 10px;
+}
+
+tooltip {
+  all: unset;
+  opacity: 0.9;
+  background: alpha(@background, 0.9);
+  border-radius: 7px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @border;
+}
+
+tooltip label {
+  all: unset;
+  font-family: "Unifont", "Symbols Nerd Font";
+  font-size: 11px;
+  font-weight: bold;
+  color: @foreground;
+}
+
+#workspaces {
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+#workspaces button {
+  padding: 1px;
+  color: @background;
+}
+
+#workspaces button.active,
+#workspaces button.visible {
+  color: @accent;
+}
+
+#workspaces button.focused {
+  color: @accent;
+  border-radius: 10px;
+}
+
+#workspaces button.urgent {
+  background: @highlight;
+  color: @foreground;
+  border-radius: 10px;
+}
+
+#workspaces button:hover {
+  background: @highlight;
+  color: @foreground;
+  border-radius: 10px;
+}
+
+#custom-record {
+  border-left: solid 1px @border;
+}
+
+#memory {
+  color: #e5c07b;
+}
+
+#battery.critical:not(.charging),
+#temperature.critical {
+  color: #e92d4d;
+}
+
+#battery.warning:not(.charging),
+#temperature.warning {
+  color: #ffcc00;
+}
+
+#battery {
+  color: #34ec23;
+}
+
+#bluetooth {
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 7.5px;
+}
+
+#temperature {
+  color: #98c379;
+}
+
+#battery {
+  border-radius: 10px 0px 0px 10px;
+  margin-left: 7.5px;
+}
+
+#custom-launch_app,
+#custom-mpris {
+  border-radius: 10px 0px 0px 10px;
+}
+
+#tray {
+  border-radius: 10px;
+  margin-right: 7.5px;
+}
+
+#network {
+  color: #c678dd;
+}
+
+#clock {
+  color: #fab387;
+  border-radius: 10px;
+  margin-left: 7.5px;
+  border-right: 0px;
+}
+
+#custom-cava_mviz,
+#pulseaudio {
+  color: #89b4fa;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#pulseaudio.microphone {
+  color: #cba6f7;
+}
+
+#backlight {
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 7.5px;
+}
+
+#custom-power_btn {
+  color: #e06c75;
+  border-radius: 0 10px 10px 0;
+  margin-right: 7.5px;
+  border-left: 0px;
+}
+
+#custom-weather {
+  border-radius: 10px;
+  margin-left: 7.5px;
+  border-right: 0px;
+}
+
+#cpu {
+  color: #61afef;
+}
+
+#bluetooth,
+#custom-launch_app {
+  color: #1788e4;
+}

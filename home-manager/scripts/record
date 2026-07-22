@@ -1,0 +1,22 @@
+#!/usr/bin/env fish
+
+set -l PID (pidof wl-screenrec)
+set -l OUTPUT "$HOME/Videos/Records/$(date +'%Y-%m-%d_%H-%M-%S').mp4"
+
+if [ $PID ]
+    kill $PID
+    notify-send "Screen Recording" "Screen Recording stopped"
+else
+    if [ $argv[1] = select ]
+        set -l region (slurp)
+        if [ $status = 1 ]
+            wl-screenrec -f "$OUTPUT" &
+        else
+            wl-screenrec -f "$OUTPUT" -g "$region" &
+        end
+    else
+        wl-screenrec -f "$OUTPUT" &
+    end
+
+    notify-send "Screen Recording" "Screen Recording started"
+end
