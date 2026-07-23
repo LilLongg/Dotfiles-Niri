@@ -13,5 +13,3 @@ home-manager switch --flake . --impure
 
 pywalfox install
 wpg-install.sh -iG
-
-nix-index
