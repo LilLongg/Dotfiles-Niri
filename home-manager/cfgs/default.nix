@@ -2,7 +2,6 @@
   imports = [
     ./bat
     ./clang-format
-    ./colors
     ./fastfetch
     ./fcitx5
     ./ferdium
