@@ -2,6 +2,9 @@
   imports = [
     ./gtk.nix
     ./qt.nix
+
+    ./wallust
+    ./wpg
   ];
 
   home.packages = with pkgs; [
@@ -11,5 +14,8 @@
     qt5.qtwayland
     qt6.qtbase
     qt6.qtwayland
+
+    pywalfox-native
+    wpgtk
   ];
 }

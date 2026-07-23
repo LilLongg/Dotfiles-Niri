@@ -20,6 +20,10 @@
       src = "niri.kdl";
       dst = "${config.xdg.configHome}/niri/colors.kdl";
     };
+    pywalfox = {
+      src = "colors.json";
+      dst = "${config.xdg.cacheHome}/wal/colors.json";
+    };
     vesktop = {
       src = "vesktop.css";
       dst = "${config.xdg.configHome}/vesktop/settings/quickCss.css";
