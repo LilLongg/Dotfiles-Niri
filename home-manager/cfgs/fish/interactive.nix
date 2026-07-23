@@ -36,10 +36,10 @@
         flakeDir = "~/Dotfiles";
       in
       {
-        rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
-        hrb = "home-manager switch --flake ${flakeDir}";
+        rb = "sudo nixos-rebuild switch --flake ${flakeDir} --impure";
+        hrb = "home-manager switch --flake ${flakeDir} --impure";
         upd = "nix flake update ${flakeDir}";
-        upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
+        upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir} --impure";
         rmcache = "sudo nix-collect-garbage -d && home-manager expire-generations '-1 mins' --flake ${flakeDir}";
 
         cl = "clear && smallfetch";

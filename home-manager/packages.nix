@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     activate-linux
     ani-cli
+    audacity
     awww
     bc
     bluetui
@@ -27,7 +28,6 @@
     rar
     slurp
     spotdl
-    tenacity
     trash-cli
     unzip
     uv

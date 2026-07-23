@@ -28,5 +28,9 @@
       src = "waybar.css";
       dst = "${config.xdg.configHome}/waybar/colors.css";
     };
+    yazi = {
+      src = "yazi.toml";
+      dst = "${config.xdg.configHome}/yazi/theme.toml";
+    };
   };
 }

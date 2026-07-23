@@ -45,17 +45,16 @@ switch (string split . "$IMG_PATH" | tail -n1)
         awww img --transition-type random "$IMG_PATH" >/dev/null &
 end
 
-matugen image "$IMG_CACHE" --source-color-index 0
 if [ "$THEME" = dark ]
     wpg -ns "$IMG_CACHE"
     wallust run "$IMG_CACHE" --colorspace lchmixed --check-contrast
-    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'" &
-    pywalfox dark && pywalfox update &
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+    pywalfox dark && sleep 0.1 && pywalfox update &
 else
     wpg -ns "$IMG_CACHE" -L
     wallust run "$IMG_CACHE" --colorspace salience --palette saliencelight
-    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'" &
-    pywalfox light && pywalfox update &
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+    pywalfox light && sleep 0.1 && pywalfox update &
 end
 
 gtk-update-icon-cache -ft "$XDG_DATA_HOME/icons/flattrcolor" && gtk4-update-icon-cache -ft "$XDG_DATA_HOME/icons/flattrcolor"
