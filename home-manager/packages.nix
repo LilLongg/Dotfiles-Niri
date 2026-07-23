@@ -12,6 +12,7 @@
     bc
     bluetui
     brightnessctl
+    btop
     cava
     cpx
     dua

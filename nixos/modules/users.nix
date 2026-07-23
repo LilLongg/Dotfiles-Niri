@@ -4,9 +4,9 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "libvirtd"
-      "kvm"
-    ]; # Enable ‘sudo’ for the user.
+      "dialout"
+      "tty"
+    ];
   };
 
   users.defaultUserShell = pkgs.fish;

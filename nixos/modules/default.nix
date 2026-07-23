@@ -14,7 +14,6 @@
     ./services.nix
     ./steam.nix
     ./users.nix
-    ./virtualisation.nix
     ./zram-swap.nix
   ];
 }

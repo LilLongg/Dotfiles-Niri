@@ -4,15 +4,14 @@
     kernelParams = [ "resume=LABEL=SWAP" ];
     loader = {
       timeout = 10;
-
       efi = {
         efiSysMountPoint = "/boot";
         canTouchEfiVariables = true;
       };
-
       grub = {
         efiSupport = true;
         device = "nodev";
+        default = "saved";
         useOSProber = true;
         theme = "${
           (pkgs.fetchFromGitHub {
