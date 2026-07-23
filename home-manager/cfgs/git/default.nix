@@ -3,8 +3,10 @@
     enable = true;
     lfs.enable = true;
     settings = {
-      name = "LilLongg";
-      email = "glivingstone70@gmail.com";
+      user = {
+        name = "LilLongg";
+        email = "glivingstone70@gmail.com";
+      };
     };
   };
 
