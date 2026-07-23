@@ -14,7 +14,6 @@
     ./helix
     ./hypr
     ./kitty
-    ./lutris
     ./media
     ./niri
     ./obs-studio

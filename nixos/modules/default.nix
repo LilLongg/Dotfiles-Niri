@@ -12,7 +12,6 @@
     ./pipewire.nix
     ./sddm.nix
     ./services.nix
-    ./steam.nix
     ./users.nix
     ./zram-swap.nix
   ];
