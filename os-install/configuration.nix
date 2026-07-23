@@ -25,13 +25,12 @@
     grub = {
       enable = true;
       efiSupport = true;
-      efiInstallAsRemovable = true;
       device = "nodev";
     };
   };
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxKernel.kernels.linux_zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   networking.hostName = "TNonggChann-no-Laptop"; # Define your hostname.
 
