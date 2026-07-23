@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    kernelParams = [ "resume=LABEL=SWAP" ];
     loader = {
       timeout = 10;
       efi = {

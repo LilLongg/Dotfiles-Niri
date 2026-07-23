@@ -7,7 +7,8 @@
         content = {
           type = "gpt";
           partitions = {
-            a = {
+            ESP = {
+              label = "ESP"; 
               type = "EF00";
               size = "1G";
               content = {
@@ -18,7 +19,8 @@
               };
             };
 
-            b = {
+            SWAP = {
+              label = "SWAP"; 
               size = "8G";
               content = {
                 type = "swap";
@@ -26,7 +28,8 @@
               };
             };
 
-            c = {
+            ROOT = {
+              label = "ROOT"; 
               size = "200G";
               content = {
                 type = "filesystem";
