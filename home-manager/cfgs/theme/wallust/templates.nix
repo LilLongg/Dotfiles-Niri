@@ -24,6 +24,10 @@
       src = "colors.json";
       dst = "${config.xdg.cacheHome}/wal/colors.json";
     };
+    rofi = {
+      src = "rofi.rasi";
+      dst = "${config.xdg.configHome}/rofi/colors.rasi";
+    };
     vesktop = {
       src = "vesktop.css";
       dst = "${config.xdg.configHome}/vesktop/settings/quickCss.css";
