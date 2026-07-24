@@ -36,6 +36,10 @@
       src = "waybar.css";
       dst = "${config.xdg.configHome}/waybar/colors.css";
     };
+    wleave = {
+      src = "wleave.css";
+      dst = "${config.xdg.configHome}/wleave/colors.css";
+    };
     yazi = {
       src = "yazi.toml";
       dst = "${config.xdg.configHome}/yazi/theme.toml";

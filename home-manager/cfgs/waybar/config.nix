@@ -189,7 +189,7 @@
 
       "custom/power_btn" = {
         "format" = "";
-        "on-click" = "sh -c '(wlogout --protocol layer-shell)' & disown";
+        "on-click" = "sh -c '(wleave)' & disown";
         "tooltip" = true;
         "tooltip-format" = "Power options";
       };

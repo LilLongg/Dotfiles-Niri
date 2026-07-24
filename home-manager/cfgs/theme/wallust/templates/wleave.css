@@ -1,0 +1,11 @@
+* {
+  --bg: {{ color0 }};
+  --fg: {{ color7 }};
+  --border: {{ color8 }};
+  --highlight: {{ color1 }};
+  --highlight-text: {{ color6 }};
+}
+
+window {
+  background-image: url("{{ wallpaper }}");
+}

@@ -23,7 +23,7 @@
     ./vesktop
     ./vscode
     ./waybar
-    ./wlogout
+    ./wleave
     ./xdg
   ];
 }

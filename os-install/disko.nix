@@ -8,7 +8,7 @@
           type = "gpt";
           partitions = {
             ESP = {
-              label = "ESP"; 
+              label = "ESP";
               type = "EF00";
               size = "1G";
               content = {
@@ -20,7 +20,7 @@
             };
 
             SWAP = {
-              label = "SWAP"; 
+              label = "SWAP";
               size = "8G";
               content = {
                 type = "swap";
@@ -29,8 +29,9 @@
             };
 
             ROOT = {
-              label = "ROOT"; 
-              size = "200G";
+              label = "ROOT";
+              start = "9G";
+              end = "209G";
               content = {
                 type = "filesystem";
                 format = "ext4";
