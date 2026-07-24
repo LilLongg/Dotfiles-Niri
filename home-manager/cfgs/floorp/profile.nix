@@ -19,8 +19,11 @@ in
       "browser.tabs.allow_transparent_browser" = true;
       "floorp.panelSidebar.enabled" = false;
       "media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled" = true;
+      "media.eme.mediadrm.origin-id.enabled" = true;
 
       "signon.autofillForms" = false;
+      "browser.contextual-password-manager.enabled" = false;
+      "browser.migrate.chrome.payment_methods.enabled" = false;
       "browser.dataFeatureRecommendations.enabled" = false;
       "extensions.htmlaboutaddons.recommendations.enabled" = false;
 
