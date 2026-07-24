@@ -25,7 +25,7 @@
   all: unset;
   font-family: "Unifont", "Symbols Nerd Font";
   font-weight: bold;
-  font-size: 12px;
+  font-size: 13px;
   min-height: 0;
   background: alpha(@background, 0.9);
   opacity: 0.9;
@@ -47,7 +47,7 @@ tooltip {
 tooltip label {
   all: unset;
   font-family: "Unifont", "Symbols Nerd Font";
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
   color: @foreground;
 }
@@ -88,8 +88,9 @@ tooltip label {
   border-left: solid 1px @border;
 }
 
+#clock,
 #memory {
-  color: #e5c07b;
+  color: #ffa812;
 }
 
 #battery.critical:not(.charging),
@@ -135,7 +136,6 @@ tooltip label {
 }
 
 #clock {
-  color: #fab387;
   border-radius: 10px;
   margin-left: 7.5px;
   border-right: 0px;
