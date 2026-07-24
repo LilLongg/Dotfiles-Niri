@@ -256,10 +256,12 @@ animations {
     }
 }
 
-// blur {
-//     on
-//     passes 1
-// }
+blur {
+    on
+    passes 1
+    noise 0.05
+    saturation 3
+}
 
 overview {
     workspace-shadow {
@@ -271,24 +273,19 @@ overview {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 window-rule {
-    opacity 0.9
+    opacity 0.925
     geometry-corner-radius 10
     clip-to-geometry true
     draw-border-with-background false
-}
-
-window-rule {
-    match is-focused=true
-    match app-id=r#"^floorp$"#
-
-    opacity 0.95
+    background-effect {
+        blur true
+        xray true
+    }
 }
 
 window-rule {
     match app-id="mpv"
     match app-id="flameshot"
-    match app-id="virt-manager"
-    match title="im-emoji-picker"
     match title=r#".*YouTube.*"#
     
     opacity 1.0
@@ -319,11 +316,7 @@ window-rule {
     match title="im-emoji-picker"
 
     open-focused false
-}
-
-window-rule {
-    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=10 y=10 relative-to="bottom-right"
+    opacity 0.925
 }
 
 layer-rule {
@@ -331,6 +324,15 @@ layer-rule {
     match namespace="mpvpaper"
 
     place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="rofi"
+    opacity 0.925
+    background-effect {
+        blur true
+        xray true
+    }
 }
 
 binds {

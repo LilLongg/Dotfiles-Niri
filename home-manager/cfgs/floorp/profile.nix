@@ -16,6 +16,7 @@ in
       "browser.ctrlTab.sortByRecentlyUsed" = true;
       "browser.download.useDownloadDir" = false;
       "browser.toolbars.bookmarks.visibility" = "never";
+      "browser.tabs.allow_transparent_browser" = true;
       "floorp.panelSidebar.enabled" = false;
       "media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled" = true;
 

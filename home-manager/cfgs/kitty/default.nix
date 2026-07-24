@@ -23,7 +23,7 @@
       input_delay = 0;
       repaint_delay = 8;
       sync_to_monitor = "no";
-      background_opacity = 0.9;
+      background_opacity = 0.925;
     };
 
     shellIntegration.enableFishIntegration = true;

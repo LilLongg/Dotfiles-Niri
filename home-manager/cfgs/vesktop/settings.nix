@@ -3,13 +3,14 @@
   programs.vesktop = {
     enable = true;
     settings = {
-      tray = true;
-      minimizeToTray = true;
-      clickTrayToShowHide = true;
+      arRPC = true;
       autoStartMinimized = false;
+      clickTrayToShowHide = true;
       disableSmoothScroll = false;
       hardwareAcceleration = true;
       hardwareVideoAcceleration = true;
+      minimizeToTray = true;
+      tray = true;
     };
   };
 }
