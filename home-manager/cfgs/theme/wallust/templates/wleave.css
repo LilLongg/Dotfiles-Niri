@@ -1,5 +1,5 @@
 * {
-  --bg: {{ color0 }};
+  --bg: {{ color1 }};
   --fg: {{ color7 }};
   --border: {{ color8 }};
   --highlight: {{ color0 | saturate(0.2) }};

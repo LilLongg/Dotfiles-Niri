@@ -29,7 +29,7 @@
   min-height: 0;
   background: alpha(@background, 0.9);
   opacity: 0.9;
-  color: @accent;
+  color: @foreground;
   padding: 0px 7.5px;
   margin-top: 10px;
 }
@@ -59,16 +59,16 @@ tooltip label {
 
 #workspaces button {
   padding: 1px;
-  color: @background;
+  color: transparent;
 }
 
 #workspaces button.active,
 #workspaces button.visible {
-  color: @accent;
+  color: @foreground;
 }
 
 #workspaces button.focused {
-  color: @accent;
+  color: @foreground;
   border-radius: 10px;
 }
 
