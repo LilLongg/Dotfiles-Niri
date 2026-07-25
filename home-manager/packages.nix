@@ -27,7 +27,6 @@
     nushell
     proton-vpn
     rar
-    slurp
     spotdl
     trash-cli
     unzip
