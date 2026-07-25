@@ -16,14 +16,11 @@
       bold_italic_font = "auto";
       mouse_hide_wait = 2.0;
       cursor_shape = "block";
-      url_color = "#0087bd";
       confirm_os_window_close = 0;
-      dynamic_background_opacity = 1;
       allow_remote_control = "yes";
       input_delay = 0;
       repaint_delay = 8;
       sync_to_monitor = "no";
-      background_opacity = 0.925;
     };
 
     shellIntegration.enableFishIntegration = true;

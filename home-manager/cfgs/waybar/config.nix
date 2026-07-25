@@ -109,13 +109,13 @@
         tooltip-format = "Cpu temperature";
         warning-threshold = 60;
         critical-threshold = 75;
-        on-click = "kitty --class btop sh -c 'btop'";
+        on-click = "kitty --title btop sh -c 'btop'";
       };
 
       cpu = {
         interval = 1;
         format = " {usage}%";
-        on-click = "kitty --class btop sh -c 'btop'";
+        on-click = "kitty --title btop sh -c 'btop'";
       };
 
       memory = {
@@ -123,7 +123,7 @@
         format = " {percentage}%";
         tooltip = true;
         tooltip-format = "Memory - {used:0.2f}GB / {total:0.2f}GB ({percentage}%)\nSwap - {swapUsed:0.2f}GB / {swapTotal:0.2f}GB ({swapPercentage}%)";
-        on-click = "kitty --class btop sh -c 'btop'";
+        on-click = "kitty --title btop sh -c 'btop'";
       };
 
       network = {
@@ -136,7 +136,7 @@
         tooltip-format = "{ifname} via {gwaddr} 󰊗";
         tooltip-format-wifi = "Wifi: {essid}\n {bandwidthDownBits}  {bandwidthUpBits}";
         tooltip-format-disconnected = "Disconnected";
-        on-click = "kitty --class impala sh -c 'impala'";
+        on-click = "kitty --title impala sh -c 'impala'";
       };
 
       bluetooth = {
@@ -151,7 +151,7 @@
         "tooltip-format-enumerate-connected" = "{device_alias}\t{device_address}";
         "tooltip-format-enumerate-connected-battery" =
           "{device_alias}\t{device_address}\t{device_battery_percentage}%";
-        "on-click" = "kitty --class bluetui bluetui";
+        "on-click" = "kitty --title bluetui bluetui";
       };
 
       "custom/launch_app" = {

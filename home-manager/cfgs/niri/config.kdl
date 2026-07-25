@@ -258,14 +258,15 @@ animations {
 
 blur {
     on
-    passes 1
-    noise 0.05
-    saturation 3
+    passes 3
+    offset 3.0
+    noise 0.03
+    saturation 1.0
 }
 
 overview {
     workspace-shadow {
-        on
+        off
     }
 }
 
@@ -273,7 +274,7 @@ overview {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 window-rule {
-    opacity 0.925
+    opacity 0.8
     geometry-corner-radius 10
     clip-to-geometry true
     draw-border-with-background false
@@ -284,23 +285,23 @@ window-rule {
 }
 
 window-rule {
-    match app-id="mpv"
     match app-id="flameshot"
+    match app-id="mpv"
     match title=r#".*YouTube.*"#
     
     opacity 1.0
 }
 
 window-rule {
-    match app-id="btop"
-    match app-id="rmpc"
-    match app-id="impala"
     match app-id="viewnior"
-    match app-id="bluetui"
     match app-id="protonvpn-app"
     match app-id="org.gnome.Nautilus"
     match app-id="org.gnome.FileRoller"
     match app-id=r#"org.fcitx.*"#
+    match title="bluetui"
+    match title="btop"
+    match title="impala"
+    match title="rmpc"
     match title="Picture-in-Picture"
 
     open-floating true
@@ -316,7 +317,6 @@ window-rule {
     match title="im-emoji-picker"
 
     open-focused false
-    opacity 0.925
 }
 
 layer-rule {
@@ -328,7 +328,7 @@ layer-rule {
 
 layer-rule {
     match namespace="rofi"
-    opacity 0.925
+    opacity 0.8
     background-effect {
         blur true
         xray true
@@ -354,7 +354,7 @@ binds {
     Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "kitty" "--hold" "sh" "-c" "fastfetch -c $XDG_CONFIG_HOME/fastfetch/smallfetch.jsonc"; }
     Mod+T repeat=false hotkey-overlay-title=null { spawn "kitty" "--hold" "sh" "-c" "fastfetch -c $XDG_CONFIG_HOME/fastfetch/smallfetch.jsonc"; }
     Mod+Shift+T repeat=false hotkey-overlay-title=null { spawn "kitty" "--hold" "fastfetch"; }
-    Mod+Alt+T repeat=false hotkey-overlay-title=null { spawn "kitty" "--class" "btop" "btop"; }
+    Mod+Alt+T repeat=false hotkey-overlay-title=null { spawn "kitty" "--title" "btop" "btop"; }
 
     Mod+A hotkey-overlay-title="Run Application Launcher" { spawn "rofi" "-show" "drun"; }
     Mod+Shift+A hotkey-overlay-title="Change the Wallpaper" { spawn-sh "$XDG_BIN_HOME/select_wpp"; }
@@ -392,7 +392,7 @@ binds {
 
     Mod+F repeat=false hotkey-overlay-title="Open File Manager" { spawn "nautilus"; }
 
-    Mod+Y repeat=false hotkey-overlay-title="Open MPD Manager" { spawn "kitty" "--class" "rmpc" "rmpc"; }
+    Mod+Y repeat=false hotkey-overlay-title="Open MPD Manager" { spawn "kitty" "--title" "rmpc" "rmpc"; }
     Mod+M repeat=false hotkey-overlay-title="Change Media Player" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py change"; }
     Mod+P repeat=false hotkey-overlay-title="Toggle Media Play/Pause" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py toggle"; }
     Mod+Shift+P hotkey-overlay-title="Stop Media Playback" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py stop"; }
@@ -413,8 +413,8 @@ binds {
     Mod+V repeat=false hotkey-overlay-title="Record the Screen" { spawn-sh "$XDG_DATA_HOME/scripts/record"; }
     Mod+Shift+V repeat=false hotkey-overlay-title=null { spawn-sh "$XDG_DATA_HOME/scripts/record select"; }
     
-    Mod+B repeat=false hotkey-overlay-title="Open Bluetooth Manager" { spawn "kitty" "--class" "bluetui" "bluetui"; }
-    Mod+N repeat=false hotkey-overlay-title="Open Wifi Manager" { spawn "kitty" "--class" "impala" "impala"; }
+    Mod+B repeat=false hotkey-overlay-title="Open Bluetooth Manager" { spawn "kitty" "--title" "bluetui" "bluetui"; }
+    Mod+N repeat=false hotkey-overlay-title="Open Wifi Manager" { spawn "kitty" "--title" "impala" "impala"; }
     Mod+I repeat=false hotkey-overlay-title="Open Web Browser" { spawn "floorp"; }
     Mod+Shift+I repeat=false hotkey-overlay-title="Open Social Media" { spawn "ferdium"; }
     Mod+Alt+I repeat=false hotkey-overlay-title="Open Social Media" { spawn "vesktop"; }
