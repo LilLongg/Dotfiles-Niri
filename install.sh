@@ -12,4 +12,4 @@ sudo nixos-rebuild switch --flake . --impure
 home-manager switch --flake . --impure
 
 pywalfox install
-wpg-install.sh -iG
+home-manager/scripts/wpg-install.sh -iG

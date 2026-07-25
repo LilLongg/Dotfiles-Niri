@@ -46,13 +46,13 @@ switch (string split . "$IMG_PATH" | tail -n1)
 end
 
 if [ "$THEME" = dark ]
-    wpg -ns "$IMG_CACHE"
     wallust run "$IMG_CACHE" --colorspace lchmixed --check-contrast
+    "$XDG_DATA_HOME/scripts/update-icon.py"
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
     pywalfox dark && sleep 0.1 && pywalfox update &
 else
-    wpg -ns "$IMG_CACHE" -L
     wallust run "$IMG_CACHE" --colorspace salience --palette saliencelight
+    "$XDG_DATA_HOME/scripts/update-icon.py" light
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
     pywalfox light && sleep 0.1 && pywalfox update &
 end

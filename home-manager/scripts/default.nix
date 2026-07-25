@@ -19,10 +19,12 @@
   xdg.dataFile."scripts/save-ferdium-data".source = ./save-ferdium-data;
   xdg.dataFile."scripts/save-vesktop-data".source = ./save-vesktop-data;
   xdg.dataFile."scripts/save-vscode-data".source = ./save-vscode-data;
+  xdg.dataFile."scripts/update-icon.py".source = ./update-icon.py;
   xdg.dataFile."scripts/update_player.fish".source = ./update_player.fish;
   xdg.dataFile."scripts/venvlist.nu".source = ./venvlist.nu;
   xdg.dataFile."scripts/waybar-wttr.py".source = ./waybar-wttr.py;
   xdg.dataFile."scripts/WaybarCava.sh".source = ./WaybarCava.sh;
+  xdg.dataFile."scripts/wpg-install.sh".source = ./wpg-install.sh;
 
   home.packages = [
     (pkgs.callPackage ./cpp-scripts.nix { })

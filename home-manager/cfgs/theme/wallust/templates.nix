@@ -12,6 +12,18 @@
       src = "hyprlock.conf";
       dst = "${config.xdg.configHome}/hypr/colors.conf";
     };
+    gtk-dark = {
+      src = "gtk.css";
+      dst = "${config.xdg.dataHome}/themes/linea-nord-color/general/dark.css";
+    };
+    gtk-light = {
+      src = "gtk.css";
+      dst = "${config.xdg.dataHome}/themes/linea-nord-color/general/light.css";
+    };
+    gtkrc = {
+      src = "gtkrc";
+      dst = "${config.xdg.dataHome}/themes/linea-nord-color/gtk-2.0/gtkrc";
+    };
     kitty = {
       src = "kitty.conf";
       dst = "${config.xdg.configHome}/kitty/colors.conf";

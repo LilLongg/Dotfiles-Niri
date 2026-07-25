@@ -4,7 +4,6 @@
     ./qt.nix
 
     ./wallust
-    ./wpg
   ];
 
   home.packages = with pkgs; [
@@ -16,6 +15,5 @@
     qt6.qtwayland
 
     pywalfox-native
-    wpgtk
   ];
 }
