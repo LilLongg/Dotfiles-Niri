@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   home.file."${config.xdg.binHome}/bgaction".source = ./bgaction;
   home.file."${config.xdg.binHome}/select_wpp".source = ./select_wpp;
+  home.file."${config.xdg.binHome}/scripts/wpg-install.sh".source = ./wpg-install.sh;
 
   xdg.dataFile."scripts/battery.sh".source = ./battery.sh;
   xdg.dataFile."scripts/cliphist-rofi-img".source = ./cliphist-rofi-img;
@@ -21,10 +22,8 @@
   xdg.dataFile."scripts/save-vscode-data".source = ./save-vscode-data;
   xdg.dataFile."scripts/update-icon.py".source = ./update-icon.py;
   xdg.dataFile."scripts/update_player.fish".source = ./update_player.fish;
-  xdg.dataFile."scripts/venvlist.nu".source = ./venvlist.nu;
   xdg.dataFile."scripts/waybar-wttr.py".source = ./waybar-wttr.py;
   xdg.dataFile."scripts/WaybarCava.sh".source = ./WaybarCava.sh;
-  xdg.dataFile."scripts/wpg-install.sh".source = ./wpg-install.sh;
 
   home.packages = [
     (pkgs.callPackage ./cpp-scripts.nix { })

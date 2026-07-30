@@ -1,11 +1,16 @@
 function venv --description="Manage Python virtual environment"
-    set -l VENV_DIR ~/.venv
+    set -l VENV_DIR "$HOME/.venv"
 
     switch $argv[1]
         case list
-            "$XDG_DATA_HOME/scripts/venvlist.nu"
+            for env in (ls "$VENV_DIR")
+                cd "$VENV_DIR/$env/bin"
+                set -l PYTHON_VER (ls --no-symlink | grep "python[[:digit:]]\.")
+                echo "$env => $PYTHON_VER"
+                cd -
+            end
         case create
-            uv venv --directory=$VENV_DIR "$argv[2..]" --relocatable
+            uv venv --directory=$VENV_DIR $argv[2..] --relocatable
         case remove
             rm -rf '$VENV_DIR/$argv[2]'
         case activate

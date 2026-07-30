@@ -27,17 +27,6 @@
         ];
       }
       {
-        name = "toml";
-        auto-format = true;
-        formatter = {
-          command = "taplo";
-          args = [
-            "format"
-            "-"
-          ];
-        };
-      }
-      {
         name = "json";
         comment-token = "//";
         auto-format = true;

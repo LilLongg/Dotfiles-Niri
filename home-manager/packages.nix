@@ -24,7 +24,6 @@
     impala
     libnotify
     nautilus
-    nushell
     proton-vpn
     rar
     spotdl

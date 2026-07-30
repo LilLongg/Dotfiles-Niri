@@ -1,7 +1,6 @@
 {
   imports = [
     ./bat
-    ./clang-format
     ./fastfetch
     ./fcitx5
     ./ferdium

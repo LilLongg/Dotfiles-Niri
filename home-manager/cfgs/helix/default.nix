@@ -8,5 +8,7 @@
     ./languages.nix
     ./language-servers.nix
     ./settings.nix
+
+    ./lsp-config
   ];
 }
