@@ -9,6 +9,7 @@ layout {
 window-rule {
 	match is-window-cast-target=true
 
+	opacity 1.0
 	border {
 	    width 3
 		active-gradient from="{{ color1 | saturate(0.6) }}" to="{{ color6 | saturate(0.6) }}" angle=45 in="oklch longer hue"

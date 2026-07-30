@@ -258,7 +258,7 @@ animations {
 
 blur {
     on
-    passes 3
+    passes 2
     offset 3.0
     noise 0.03
     saturation 1.0
@@ -274,7 +274,7 @@ overview {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 window-rule {
-    opacity 0.78
+    opacity 0.8
     geometry-corner-radius 10
     clip-to-geometry true
     draw-border-with-background false
@@ -328,7 +328,7 @@ layer-rule {
 
 layer-rule {
     match namespace="rofi"
-    opacity 0.78
+    opacity 0.8
     background-effect {
         blur true
         xray true
