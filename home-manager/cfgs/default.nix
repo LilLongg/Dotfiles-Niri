@@ -8,6 +8,7 @@
     ./flameshot
     ./floorp
     ./fonts
+    ./games
     ./git
     ./helix
     ./hypr

@@ -39,7 +39,7 @@
       };
     in
     {
-      nixosConfigurations.TNonggChann-no-Laptop = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.TNonggChann-no-PC = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit
             pkgs-stable
@@ -67,7 +67,7 @@
         ];
         extraSpecialArgs = {
           inherit pkgs-stable;
-          osConfig = self.nixosConfigurations.TNonggChann-no-Laptop.config;
+          osConfig = self.nixosConfigurations.TNonggChann-no-PC.config;
         };
       };
     };
