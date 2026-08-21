@@ -9,7 +9,6 @@
   xdg.dataFile."scripts/image-theme.py".source = ./image-theme.py;
   xdg.dataFile."scripts/initbg".source = ./initbg;
   xdg.dataFile."scripts/mpris.py".source = ./mpris.py;
-  xdg.dataFile."scripts/playerctl.py".source = ./playerctl.py;
   xdg.dataFile."scripts/record".source = ./record;
   xdg.dataFile."scripts/record_status".source = ./record_status;
   xdg.dataFile."scripts/restore-browser-profile".source = ./restore-browser-profile;
@@ -20,10 +19,10 @@
   xdg.dataFile."scripts/save-ferdium-data".source = ./save-ferdium-data;
   xdg.dataFile."scripts/save-vesktop-data".source = ./save-vesktop-data;
   xdg.dataFile."scripts/save-vscode-data".source = ./save-vscode-data;
+  xdg.dataFile."scripts/toggle-loop".source = ./toggle-loop;
   xdg.dataFile."scripts/update-icon.py".source = ./update-icon.py;
-  xdg.dataFile."scripts/update_player.fish".source = ./update_player.fish;
-  xdg.dataFile."scripts/waybar-wttr.py".source = ./waybar-wttr.py;
   xdg.dataFile."scripts/WaybarCava.sh".source = ./WaybarCava.sh;
+  xdg.dataFile."scripts/waybar-wttr.py".source = ./waybar-wttr.py;
 
   home.packages = [
     (pkgs.callPackage ./cpp-scripts.nix { })

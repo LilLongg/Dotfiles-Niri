@@ -14,6 +14,7 @@
 #custom-mpris,
 #custom-power_btn,
 #custom-record,
+#custom-swaync,
 #custom-weather,
 #disk,
 #memory,
@@ -124,18 +125,8 @@ tooltip label {
   border-radius: 10px 0px 0px 10px;
 }
 
-#tray {
-  border-radius: 10px;
-  margin-right: 7.5px;
-}
-
 #network {
   color: #c678dd;
-}
-
-#clock {
-  border-radius: 10px;
-  margin-left: 7.5px;
 }
 
 #custom-cava_mviz,
@@ -172,10 +163,22 @@ tooltip label {
   color: #1788e4;
 }
 
+#clock {
+  border-radius: 10px;
+  margin-left: 7.5px;
+}
+
+#tray,
+#custom-swaync {
+  border-radius: 10px;
+  margin-right: 7.5px;
+}
+
 #battery,
 #clock,
 #custom-launch_app,
 #custom-mpris,
+#custom-swaync,
 #custom-weather,
 #tray {
   border-left: 1px;
@@ -185,6 +188,7 @@ tooltip label {
 #bluetooth,
 #clock,
 #custom-power_btn,
+#custom-swaync,
 #custom-weather,
 #tray {
   border-right: 1px;

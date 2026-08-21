@@ -40,6 +40,10 @@
       src = "rofi.rasi";
       dst = "${config.xdg.configHome}/rofi/colors.rasi";
     };
+    swaync = {
+      src = "swaync.css";
+      dst = "${config.xdg.configHome}/swaync/colors.css";
+    };
     vesktop = {
       src = "vesktop.css";
       dst = "${config.xdg.configHome}/vesktop/settings/quickCss.css";

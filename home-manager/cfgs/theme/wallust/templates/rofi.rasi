@@ -7,7 +7,7 @@
     foreground:                  {{ color7 }};
     background:                  {{ background | blend(cursor) | blend(background) }};
     alternate-background:        {{ color3 }};
-    background-color:            rgba ( {{ background | blend(cursor) | blend(background) | red }}, {{ background | blend(cursor) | blend(background) | green }}, {{ background | blend(cursor) | blend(background) | blue }}, 93 % );
+    background-color:            rgba ( {{ background | blend(cursor) | blend(background) | red }}, {{ background | blend(cursor) | blend(background) | green }}, {{ background | blend(cursor) | blend(background) | blue }}, 85 % );
     separatorcolor:              @foreground;
     border-color:                @foreground;
     selected-normal-foreground:  @lightbg;

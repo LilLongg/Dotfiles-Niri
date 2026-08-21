@@ -5,7 +5,6 @@
 }:
 {
   home.packages = with pkgs; [
-    activate-linux
     ani-cli
     audacity
     awww
@@ -24,18 +23,17 @@
     impala
     libnotify
     nautilus
+    p7zip
     proton-vpn
     rar
     spotdl
     trash-cli
-    unzip
     uv
     viewnior
     wl-clipboard
     wl-mirror
     wl-screenrec
     yt-dlp
-    zip
 
     (python3.withPackages (
       ps: with ps; [

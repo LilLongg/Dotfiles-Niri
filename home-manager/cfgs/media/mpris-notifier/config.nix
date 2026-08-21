@@ -4,7 +4,7 @@ let
 
   cfgData = {
     subject_format = "Playerctl";
-    body_format = "Playing: <b>{title}</b><br>By <b>{artist}</b><br>From <i>{album}</i>";
+    body_format = "Playing: <b>{title}</b>\nBy <b>{artist}</b>\nFrom <i>{album}</i>";
     join_string = ", ";
     enable_album_art = true;
     album_art_deadline = 1000;

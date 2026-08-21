@@ -9,7 +9,10 @@
       modules-left = [
         "clock"
         "custom/weather"
-        "group/hardware"
+        "battery"
+        "temperature"
+        "cpu"
+        "memory"
         "network"
         "bluetooth"
       ];
@@ -28,6 +31,7 @@
         "pulseaudio#microphone"
         "backlight"
         "tray"
+        "custom/swaync"
       ];
 
       clock = {
@@ -55,20 +59,6 @@
         interval = 900;
         exec = "${config.xdg.dataHome}/scripts/waybar-wttr.py";
         return-type = "json";
-      };
-
-      "group/hardware" = {
-        orientation = "horizontal";
-        drawer = {
-          click-to-reveal = true;
-          start-expanded = true;
-        };
-        modules = [
-          "battery"
-          "temperature"
-          "cpu"
-          "memory"
-        ];
       };
 
       battery = {
@@ -200,8 +190,8 @@
         "tooltip" = true;
         "exec" = "${config.xdg.dataHome}/scripts/mpris.py";
         "return-type" = "json";
-        "on-click" = "${config.xdg.dataHome}/scripts/playerctl.py toggle";
-        "on-click-right" = "${config.xdg.dataHome}/scripts/playerctl.py change";
+        "on-click" = "playerctl play-pause";
+        "on-click-right" = "playerctld shift";
       };
 
       "custom/cava_mviz" = {
@@ -254,9 +244,29 @@
         "on-scroll-down" = "lightctl down";
       };
 
-      tray = {
-        icon-size = 18;
-        spacing = 10;
+      "tray" = {
+        "icon-size" = 18;
+        "spacing" = 10;
+      };
+
+      "custom/swaync" = {
+        "format" = "{icon}<sub>{0}</sub>";
+        "format-icons" = {
+          "notification" = "󱅫";
+          "none" = "󰂜";
+          "dnd-notification" = "󰂠";
+          "dnd-none" = "󰪓";
+          "inhibited-notification" = "󰂛";
+          "inhibited-none" = "󰪑";
+          "dnd-inhibited-notification" = "󰂛";
+          "dnd-inhibited-none" = "󰪑";
+        };
+        "tooltip" = true;
+        "exec" = "swaync-client -swb";
+        "return-type" = "json";
+        "on-click" = "swaync-client -t -sw";
+        "on-click-right" = "swaync-client -d -sw";
+        "escape" = true;
       };
     };
   };

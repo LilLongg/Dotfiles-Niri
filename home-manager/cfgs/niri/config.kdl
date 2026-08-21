@@ -221,7 +221,6 @@ environment {
 // See the binds section below for more spawn examples.
 spawn-at-startup "kitty" "--hold" "fastfetch"
 spawn-sh-at-startup "$XDG_DATA_HOME/scripts/initbg"
-spawn-at-startup "activate-linux"
 
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
@@ -392,16 +391,17 @@ binds {
 
     Mod+F repeat=false hotkey-overlay-title="Open File Manager" { spawn "nautilus"; }
 
-    Mod+Y repeat=false hotkey-overlay-title="Open MPD Manager" { spawn "kitty" "--title" "rmpc" "rmpc"; }
-    Mod+M repeat=false hotkey-overlay-title="Change Media Player" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py change"; }
-    Mod+P repeat=false hotkey-overlay-title="Toggle Media Play/Pause" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py toggle"; }
-    Mod+Shift+P hotkey-overlay-title="Stop Media Playback" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py stop"; }
-    Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Media Random" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py shuffle"; }
-    Mod+Alt+Y repeat=false hotkey-overlay-title="Toggle Media Single" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py loop"; }
-    Mod+bracketleft hotkey-overlay-title="Media plays previous track" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py previous"; }
-    Mod+bracketright hotkey-overlay-title="Media plays next track" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py next"; }
-    Mod+Shift+bracketleft hotkey-overlay-title="Media go back 10 seconds" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py seek-bw 10"; }
-    Mod+Shift+bracketright hotkey-overlay-title="Media move up 10 seconds" { spawn-sh "$XDG_DATA_HOME/scripts/playerctl.py seek-fw 10"; }
+    Mod+M repeat=false hotkey-overlay-title="Open MPD Manager" { spawn "kitty" "--title" "rmpc" "rmpc"; }
+    Mod+Shift+M repeat=false hotkey-overlay-title="Change Media Player" { spawn "playerctld" "shift"; }
+    Mod+Alt+M repeat=false hotkey-overlay-title="Change Media Player Backwards" { spawn "playerctld" "unshift"; }
+    Mod+P repeat=false hotkey-overlay-title="Toggle Media Play/Pause" { spawn "playerctl" "play-pause"; }
+    Mod+Shift+P hotkey-overlay-title="Stop Media Playback" { spawn "playerctl" "stop"; }
+    Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Media Random" { spawn "playerctl" "shuffle" "toggle"; }
+    Mod+Alt+Y repeat=false hotkey-overlay-title="Toggle Media Single" { spawn-sh "$XDG_DATA_HOME/scripts/toggle-loop"; }
+    Mod+bracketleft hotkey-overlay-title="Media plays previous track" { spawn "playerctl" "previous"; }
+    Mod+bracketright hotkey-overlay-title="Media plays next track" { spawn "playerctl" "next"; }
+    Mod+Shift+bracketleft hotkey-overlay-title="Media go back 10 seconds" { spawn-sh "playerctl position 10- || mpc seek -10"; }
+    Mod+Shift+bracketright hotkey-overlay-title="Media move up 10 seconds" { spawn-sh "playerctl position 10+ || mpc seek +10"; }
 
     Mod+S repeat=false hotkey-overlay-title="Take a Screenshot" { screenshot show-pointer=false; }
     Mod+Shift+S repeat=false hotkey-overlay-title=null { screenshot-window show-pointer=false; }
@@ -416,12 +416,11 @@ binds {
     Mod+B repeat=false hotkey-overlay-title="Open Bluetooth Manager" { spawn "kitty" "--title" "bluetui" "bluetui"; }
     Mod+N repeat=false hotkey-overlay-title="Open Wifi Manager" { spawn "kitty" "--title" "impala" "impala"; }
     Mod+I repeat=false hotkey-overlay-title="Open Web Browser" { spawn "floorp"; }
+    Mod+D repeat=false hotkey-overlay-title="Open Notification Center" { spawn "swaync-client" "-t" "-sw"; }
     Mod+Shift+I repeat=false hotkey-overlay-title="Open Social Media" { spawn "ferdium"; }
     Mod+Alt+I repeat=false hotkey-overlay-title="Open Social Media" { spawn "vesktop"; }
     Mod+E repeat=false hotkey-overlay-title="Open Text Editor" { spawn "zeditor"; }
 
-    Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Mute for Volume" { spawn "volumectl" "toggle-mute"; }
-    Mod+Alt+M repeat=false hotkey-overlay-title=null { spawn "volumectl" "-m" "toggle-mute"; }
     Mod+Equal hotkey-overlay-title="Increase Volume" { spawn "volumectl" "up"; }
     Mod+Minus hotkey-overlay-title="Decrease Volume" { spawn "volumectl" "down"; }
     Mod+Shift+Equal hotkey-overlay-title=null { spawn "volumectl" "-m" "up"; }

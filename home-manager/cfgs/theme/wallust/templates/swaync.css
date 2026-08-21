@@ -1,0 +1,10 @@
+@define-color noti-bg alpha({{ background | blend(cursor) | blend(background) }}, 0.85);
+@define-color button-bg {{ color5 }};
+@define-color hover-bg {{ color0 | saturate(0.2) }};
+@define-color text-color {{ color7 }};
+@define-color text-color-alt {{ color4 }};
+@define-color text-color-on-bg {{ color0 }};
+@define-color text-color-disabled alpha(@text-color, 0.85);
+@define-color border-color {{ color4 }};
+@define-color border-grad-start {{ color1 | saturate(0.6) }};
+@define-color border-grad-end {{ color6 | saturate(0.6) }};

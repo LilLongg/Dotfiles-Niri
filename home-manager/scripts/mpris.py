@@ -24,44 +24,33 @@ if players_count == 0:
     print(json.dumps(output))
     exit(0)
 
-CACHE_FILE = "/dev/shm/player.cache"
-try:
-    with open(CACHE_FILE) as cf:
-        active_player = cf.readline().strip()
-except Exception as e:
-    output = {"text": "Stopped 󰝛", "tooltip": str(e)}
-    print(json.dumps(output))
-    exit(0)
-
-if active_player not in players:
-    active_player = players[0]
 
 if (
-    subprocess.run(
-        ["playerctl", "-p", active_player, "status"],
+    running_status := subprocess.run(
+        ["playerctl", "status"],
         capture_output=True,
         encoding="utf-8",
     ).stdout.strip()
-    == "Stopped"
-):
+) == "Stopped":
     output = {"text": "Stopped 󰝛", "tooltip": "No media is playing"}
     print(json.dumps(output))
     exit(0)
 
 metadata_all = subprocess.run(
-    ["playerctl", "-p", active_player, "metadata"],
+    ["playerctl", "metadata"],
     capture_output=True,
     encoding="utf-8",
 ).stdout.split("\n")
 data = defaultdict(str)
 length = 0
+active_player = ""
 
 for metadata in metadata_all:
     field = metadata.split()
     if len(field) < 3:
         continue
 
-    data["player"] = field[0]
+    active_player = field[0]
 
     match field[1]:
         case "xesam:artist":
@@ -77,25 +66,21 @@ for metadata in metadata_all:
 
 position = int(
     subprocess.run(
-        ["playerctl", "-p", active_player, "position"],
+        ["playerctl", "position"],
         capture_output=True,
         encoding="utf-8",
     ).stdout.split(".")[0]
 )
 
 loop_status = subprocess.run(
-    ["playerctl", "-p", active_player, "loop"], capture_output=True, encoding="utf-8"
+    ["playerctl", "loop"], capture_output=True, encoding="utf-8"
 ).stdout.strip()
 loop_icon = " " if loop_status == "Track" else ""
 
 shuffle_status = subprocess.run(
-    ["playerctl", "-p", active_player, "shuffle"], capture_output=True, encoding="utf-8"
+    ["playerctl", "shuffle"], capture_output=True, encoding="utf-8"
 ).stdout.strip()
 shuffle_icon = " " if shuffle_status == "On" else ""
-
-running_status = subprocess.run(
-    ["playerctl", "-p", active_player, "status"], capture_output=True, encoding="utf-8"
-).stdout.strip()
 running_icon = " " if running_status == "Playing" else " "
 
 if re.match("firefox*", active_player):

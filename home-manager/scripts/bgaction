@@ -63,7 +63,7 @@ kitty @ set-colors -a -c "$XDG_CONFIG_HOME/kitty/colors.conf" &
 pkill -USR1 hx &
 pkill -USR2 cava &
 pkill -USR2 waybar &
-dunstctl reload &
+swaync-client --reload-css &
 
 dconf write /org/gnome/desktop/interface/gtk-theme "''" && sleep 0.1 && dconf write /org/gnome/desktop/interface/gtk-theme "'linea-nord-color'"
 dconf write /org/gnome/desktop/interface/icon-theme "''" && sleep 0.1 && dconf write /org/gnome/desktop/interface/icon-theme "'flattrcolor'"

@@ -8,7 +8,6 @@
     ./flameshot
     ./floorp
     ./fonts
-    ./games
     ./git
     ./helix
     ./hypr
@@ -19,6 +18,7 @@
     ./onlyoffice
     ./rofi
     ./services
+    ./swaync
     ./theme
     ./vesktop
     ./vscode
