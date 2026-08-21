@@ -12,6 +12,7 @@
     ./helix
     ./hypr
     ./kitty
+    ./mangohud
     ./media
     ./niri
     ./obs-studio
