@@ -1,17 +1,25 @@
 #!/usr/bin/env python
 
+import json
 import psutil
-import time
-from pathlib import Path
 
 CPU_TEMP_SENSOR_PRIORITY = "coretemp"
-TEMP_FILE = Path("/dev/shm/temperature.cache")
+TEMP_WARNING_THRESHOLD = 60
+TEMP_CRITICAL_THRESHOLD = 75
 
-while True:
-    with open(TEMP_FILE, "w") as buffer:
-        DATA = psutil.sensors_temperatures()
-        temps = [temp.current for temp in DATA[CPU_TEMP_SENSOR_PRIORITY]]
-        temp = int(sum(temps) / len(temps) * 1000)
-        buffer.write(str(temp))
+DATA = psutil.sensors_temperatures()
+temps = [temp.current for temp in DATA[CPU_TEMP_SENSOR_PRIORITY]]
+temp = int(sum(temps) / len(temps)) if temps else 0
 
-    time.sleep(1)
+output = {"text": f"{temp}°C", "tooltip": "Cpu temperature"}
+
+if temp < TEMP_WARNING_THRESHOLD:
+    output["alt"] = "normal"
+elif temp < TEMP_CRITICAL_THRESHOLD:
+    output["alt"] = "warning"
+    output["class"] = "warning"
+else:
+    output["alt"] = "critical"
+    output["class"] = "critical"
+
+print(json.dumps(output))

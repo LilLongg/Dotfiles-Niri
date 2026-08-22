@@ -15,12 +15,12 @@
 #custom-power_btn,
 #custom-record,
 #custom-swaync,
+#custom-temperature,
 #custom-weather,
 #disk,
 #memory,
 #network,
 #pulseaudio,
-#temperature,
 #tray,
 #workspaces {
   all: unset;
@@ -93,12 +93,12 @@ tooltip label {
 }
 
 #battery.critical:not(.charging),
-#temperature.critical {
+#custom-temperature.critical {
   color: #e92d4d;
 }
 
 #battery.warning:not(.charging),
-#temperature.warning {
+#custom-temperature.warning {
   color: #ffcc00;
 }
 
@@ -111,7 +111,7 @@ tooltip label {
   margin-right: 7.5px;
 }
 
-#temperature {
+#custom-temperature {
   color: #98c379;
 }
 
@@ -121,7 +121,8 @@ tooltip label {
 }
 
 #custom-launch_app,
-#custom-mpris {
+#custom-mpris,
+#tray {
   border-radius: 10px 0px 0px 10px;
 }
 
@@ -138,7 +139,8 @@ tooltip label {
   color: #cba6f7;
 }
 
-#backlight {
+#backlight,
+#custom-swaync {
   border-radius: 0px 10px 10px 0px;
   margin-right: 7.5px;
 }
@@ -166,12 +168,6 @@ tooltip label {
 #clock {
   border-radius: 10px;
   margin-left: 7.5px;
-}
-
-#tray,
-#custom-swaync {
-  border-radius: 10px;
-  margin-right: 7.5px;
 }
 
 #battery,

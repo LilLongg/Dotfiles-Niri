@@ -10,7 +10,7 @@
         "clock"
         "custom/weather"
         "battery"
-        "temperature"
+        "custom/temperature"
         "cpu"
         "memory"
         "network"
@@ -87,18 +87,17 @@
         };
       };
 
-      temperature = {
+      "custom/temperature" = {
         interval = 1;
-        "hwmon-path" = [
-          "/dev/shm/temperature.cache"
-        ];
-        format = " {temperatureC}°C";
-        format-warning = " {temperatureC}°C";
-        format-critical = " {temperatureC}°C";
         tooltip = true;
-        tooltip-format = "Cpu temperature";
-        warning-threshold = 60;
-        critical-threshold = 75;
+        format = "{icon}{text}";
+        format-icons = {
+          normal = " ";
+          warning = " ";
+          critical = " ";
+        };
+        exec = "${config.xdg.dataHome}/scripts/cputemp-monitor.py";
+        return-type = "json";
         on-click = "kitty --title btop sh -c 'btop'";
       };
 

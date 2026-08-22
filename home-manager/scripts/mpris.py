@@ -55,6 +55,8 @@ for metadata in metadata_all:
     match field[1]:
         case "xesam:artist":
             data["artist"] = metadata.split("xesam:artist")[1].strip()
+        case "xesam:albumArtist":
+            data["albumArtist"] = metadata.split("xesam:albumArtist")[1].strip()
         case "xesam:title":
             data["title"] = metadata.split("xesam:title")[1].strip()
         case "xesam:album":
@@ -87,26 +89,27 @@ if re.match("firefox*", active_player):
     active_player = "firefox"
 player_icon = {"mpd": "󰝚 ", "mpv": " ", "firefox": "󰈹 "}
 
-artist_len = len(data["artist"])
-title_len = len(data["title"])
-ARTIST_THRESHOLD = 30
-TITLE_THRESHOLD = 60
+artist = data.get("albumArtist", data["artist"])
+title = data.get("title", "")
+artist_len = len(artist)
+title_len = len(title)
+ARTIST_THRESHOLD = 20
+TITLE_THRESHOLD = 40
 
 if artist_len + title_len > ARTIST_THRESHOLD + TITLE_THRESHOLD:
     truncated_artist = (
         data["artist"]
         if artist_len <= ARTIST_THRESHOLD
-        else "".join([data["artist"][: ARTIST_THRESHOLD - 3], "..."])
+        else "".join([artist[: ARTIST_THRESHOLD - 3], "..."])
     )
     truncated_title = (
         data["title"]
         if title_len <= TITLE_THRESHOLD
-        else "".join([data["title"][: TITLE_THRESHOLD - 3], "..."])
+        else "".join([title[: TITLE_THRESHOLD - 3], "..."])
     )
-
     media_format = f"{truncated_artist} - {truncated_title}"
 else:
-    media_format = f"{data['artist']} - {data['title']}"
+    media_format = f"{artist} - {title}"
 
 
 def format_duration():
@@ -126,8 +129,8 @@ output = {
     "text": f"{player_icon.get(active_player, active_player)}{running_icon}{loop_icon}{shuffle_icon}- {media_format}",
     "tooltip": f"""
  Player: {active_player} ({running_status})
- Artist: {data["artist"]}
- Title: {data["title"]}
+ Artist: {artist}
+ Title: {title}
  Album: {data["album"]}
  Duration: {format_duration()}
  Number of players: {players_count}
