@@ -26,16 +26,16 @@
   all: unset;
   font-family: "Unifont", "Symbols Nerd Font";
   font-weight: bold;
-  font-size: 13px;
+  font-size: 12.5px;
   min-height: 0;
   background: alpha(@background, 0.9);
   opacity: 0.9;
   color: @foreground;
-  padding: 0px 7.5px;
-  margin-top: 10px;
+  padding: 0px 7px;
   border: 1px solid @highlight;
   border-left: 0px;
   border-right: 0px;
+  margin-top: 5px;
 }
 
 tooltip {
@@ -106,24 +106,8 @@ tooltip label {
   color: #34ec23;
 }
 
-#bluetooth {
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 7.5px;
-}
-
 #custom-temperature {
   color: #98c379;
-}
-
-#battery {
-  border-radius: 10px 0px 0px 10px;
-  margin-left: 7.5px;
-}
-
-#custom-launch_app,
-#custom-mpris,
-#tray {
-  border-radius: 10px 0px 0px 10px;
 }
 
 #network {
@@ -139,21 +123,8 @@ tooltip label {
   color: #cba6f7;
 }
 
-#backlight,
-#custom-swaync {
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 7.5px;
-}
-
 #custom-power_btn {
   color: #e06c75;
-  border-radius: 0 10px 10px 0;
-  margin-right: 7.5px;
-}
-
-#custom-weather {
-  border-radius: 10px;
-  margin-left: 7.5px;
 }
 
 #cpu {
@@ -165,9 +136,41 @@ tooltip label {
   color: #1788e4;
 }
 
-#clock {
+#battery,
+#clock,
+#custom-launch_app,
+#custom-mpris,
+#custom-weather,
+#tray {
+  margin-left: 3.5px;
+}
+
+#backlight,
+#bluetooth,
+#clock,
+#custom-power_btn,
+#custom-swaync,
+#custom-weather {
+  margin-right: 3.5px;
+}
+
+#battery,
+#custom-launch_app,
+#custom-mpris,
+#tray {
+  border-radius: 10px 0px 0px 10px;
+}
+
+#backlight,
+#bluetooth,
+#custom-power_btn,
+#custom-swaync {
+  border-radius: 0px 10px 10px 0px;
+}
+
+#clock,
+#custom-weather {
   border-radius: 10px;
-  margin-left: 7.5px;
 }
 
 #battery,
@@ -185,7 +188,6 @@ tooltip label {
 #clock,
 #custom-power_btn,
 #custom-swaync,
-#custom-weather,
-#tray {
+#custom-weather {
   border-right: 1px;
 }

@@ -417,6 +417,8 @@ binds {
     Mod+N repeat=false hotkey-overlay-title="Open Wifi Manager" { spawn "kitty" "--title" "impala" "impala"; }
     Mod+I repeat=false hotkey-overlay-title="Open Web Browser" { spawn "floorp"; }
     Mod+D repeat=false hotkey-overlay-title="Open Notification Center" { spawn "swaync-client" "-t" "-sw"; }
+    Mod+Shift+D repeat=false hotkey-overlay-title="Clear All Notifications" { spawn "swaync-client" "-C" "-sw"; }
+    Mod+Alt+D repeat=false hotkey-overlay-title="Toggle Do Not Disturb" { spawn "swaync-client" "--toggle-dnd" "-sw"; }
     Mod+Shift+I repeat=false hotkey-overlay-title="Open Social Media" { spawn "ferdium"; }
     Mod+Alt+I repeat=false hotkey-overlay-title="Open Social Media" { spawn "vesktop"; }
     Mod+E repeat=false hotkey-overlay-title="Open Text Editor" { spawn "zeditor"; }
