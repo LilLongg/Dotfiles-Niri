@@ -107,27 +107,6 @@
             ),
         ],
     ),
-    // layout: Split(
-    //     direction: Vertical,
-    //     panes: [
-    //         (
-    //             pane: Pane(Header),
-    //             size: "2",
-    //         ),
-    //         (
-    //             pane: Pane(Tabs),
-    //             size: "3",
-    //         ),
-    //         (
-    //             pane: Pane(TabContent),
-    //             size: "100%",
-    //         ),
-    //         (
-    //             pane: Pane(ProgressBar),
-    //             size: "1",
-    //         ),
-    //     ],
-    // ),
     header: (
         rows: [
             (
@@ -142,7 +121,7 @@
                     )
                 ],
                 right: [
-                    (kind: Property(Widget(Volume)), style: (fg: "blue"))
+                    (kind: Property(Widget(Volume)), style: (fg: "yellow"))
                 ]
             ),
             (
@@ -155,32 +134,32 @@
                     (kind: Text(" kbps)"))
                 ],
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "#88c0d0", modifiers: "Bold"),
-                        default: (kind: Text("Unknown Artist"), style: (fg: "#88c0d0", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "blue", modifiers: "Bold"),
+                        default: (kind: Text("Unknown Artist"), style: (fg: "blue", modifiers: "Bold"))
                     ),
                     (kind: Text(" - ")),
-                    (kind: Property(Song(Album)),style: (fg: "#81a1c1" ),
-                        default: (kind: Text("Unknown Album"), style: (fg: "#81a1c1", modifiers: "Bold"))
+                    (kind: Property(Song(Album)),style: (fg: "blue", modifiers: "Bold"),
+                        default: (kind: Text("Unknown Album"), style: (fg: "blue", modifiers: "Bold"))
                     )
                 ],
                 right: [
-                    (kind: Text("[ "),style: (fg: "#81a1c1")),
+                    (kind: Text("[ "),style: (fg: "yellow")),
                     (kind: Property(Status(RepeatV2(
                                     on_label: "", off_label: "",
-                                    on_style: (fg: "#d8dee9", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
-                    (kind: Text(" | "),style: (fg: "#81a1c1")),
+                                    on_style: (fg: "yellow", modifiers: "Bold"), off_style: (fg: "black", modifiers: "Bold"))))),
+                    (kind: Text(" | "),style: (fg: "yellow")),
                     (kind: Property(Status(RandomV2(
                                     on_label: "", off_label: "",
-                                    on_style: (fg: "#d8dee9", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
-                    (kind: Text(" | "),style: (fg: "#81a1c1")),
+                                    on_style: (fg: "yellow", modifiers: "Bold"), off_style: (fg: "black", modifiers: "Bold"))))),
+                    (kind: Text(" | "),style: (fg: "yellow")),
                     (kind: Property(Status(ConsumeV2(
                                     on_label: "󰮯", off_label: "󰮯", oneshot_label: "󰮯󰇊",
-                                    on_style: (fg: "#d8dee9", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
-                    (kind: Text(" | "),style: (fg: "#81a1c1")),
+                                    on_style: (fg: "yellow", modifiers: "Bold"), off_style: (fg: "black", modifiers: "Bold"))))),
+                    (kind: Text(" | "),style: (fg: "yellow")),
                     (kind: Property(Status(SingleV2(
                                     on_label: "󰎤", off_label: "󰎦", oneshot_label: "󰇊", off_oneshot_label: "󱅊",
-                                    on_style: (fg: "#d8dee9", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
-                    (kind: Text(" ]"),style: (fg: "#81a1c1")),
+                                    on_style: (fg: "yellow", modifiers: "Bold"), off_style: (fg: "black", modifiers: "Bold"))))),
+                    (kind: Text(" ]"),style: (fg: "yellow")),
                 ]
             ),
         ],

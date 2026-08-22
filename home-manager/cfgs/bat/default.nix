@@ -6,4 +6,7 @@
       batman
     ];
   };
+  home.sessionVariables = {
+    MANPAGER = "batman";
+  };
 }

@@ -26,5 +26,6 @@
     ./waybar
     ./wleave
     ./xdg
+    ./yazi
   ];
 }

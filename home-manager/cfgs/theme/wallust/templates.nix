@@ -56,9 +56,5 @@
       src = "wleave.css";
       dst = "${config.xdg.configHome}/wleave/colors.css";
     };
-    yazi = {
-      src = "yazi.toml";
-      dst = "${config.xdg.configHome}/yazi/theme.toml";
-    };
   };
 }
