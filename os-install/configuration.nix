@@ -32,7 +32,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
-  networking.hostName = "TNonggChann-no-Laptop"; # Define your hostname.
+  networking.hostName = "TNonggChann-no-PC"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -97,6 +97,7 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     git
+    git-lfs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

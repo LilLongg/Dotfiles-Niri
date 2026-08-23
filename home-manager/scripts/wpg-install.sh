@@ -18,6 +18,8 @@ THEMES_DIR="${HOME}/.themes";
 SRC_DIR="${PWD}/wpgtk-templates";
 TEMPLATE_DIR="${CONFIG}/wpg/templates";
 
+mkdir -p "${TEMPLATE_DIR}"
+
 #===  FUNCTION  ================================================================
 #         NAME:  wpg-install.sh
 #  DESCRIPTION:  Installs various wpgtk themes.
@@ -57,7 +59,6 @@ checkprogram()
 getfiles()
 {
   checkprogram 'git';
-  checkprogram 'wpg';
   mkdir -p "${LOCAL}/themes/color_other";
   mkdir -p "${LOCAL}/icons";
   git clone https://github.com/deviantfero/wpgtk-templates "$SRC_DIR";

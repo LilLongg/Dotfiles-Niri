@@ -215,6 +215,7 @@ environment {
 // See the binds section below for more spawn examples.
 spawn-at-startup "kitty" "--hold" "fastfetch"
 spawn-sh-at-startup "$XDG_DATA_HOME/scripts/initbg"
+spawn-sh-at-startup "$XDG_DATA_HOME/scripts/remove-bad-files.py"
 
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
