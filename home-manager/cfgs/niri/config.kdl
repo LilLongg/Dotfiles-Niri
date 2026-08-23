@@ -207,12 +207,6 @@ environment {
     CLUTTER_BACKEND "wayland"
     VDPAU_DRIVER "va_gl"
     ANV_DEBUG "video-decode,video-encode"
-
-    PROTON_ENABLE_WAYLAND "1"
-    PROTON_NO_WM_DECORATION "1"
-    PROTON_USE_NTSYNC "1"
-    PROTON_USE_WINE3D "1"
-    WINE_NO_WM_DECORATION "1"
 }
 
 // Add lines like this to spawn processes at startup.

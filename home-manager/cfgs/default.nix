@@ -1,6 +1,7 @@
 {
   imports = [
     ./bat
+    ./btop
     ./fastfetch
     ./fcitx5
     ./ferdium

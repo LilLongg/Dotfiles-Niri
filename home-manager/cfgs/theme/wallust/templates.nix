@@ -1,4 +1,8 @@
 { config, ... }: {
+  xdg.configFile."wallust/templates" = {
+    source = ./templates;
+    recursive = true;
+  };
   programs.wallust.settings.templates = {
     cava = {
       src = "cava";
