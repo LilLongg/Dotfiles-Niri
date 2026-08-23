@@ -11,6 +11,7 @@
               label = "ESP";
               type = "EF00";
               size = "1G";
+              priority = 1;
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -30,12 +31,28 @@
 
             ROOT = {
               label = "ROOT";
-              start = "9G";
-              end = "209G";
+              end = "-128G";
               content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/";
+                type = "btrfs";
+                extraArgs = [ "-f" ];
+                mountpoint = "/partition-root";
+                subvolumes = {
+                  "/rootfs" = {
+                    mountpoint = "/";
+                  };
+                  "/nix" = {
+                    mountpoint = "/nix";
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
+                  };
+                  "/home" = {
+                    mountpoint = "/home";
+                    mountOptions = [ "compress=zstd" ];
+                  };
+                  "/home/TNonggChann" = { };
+                };
               };
             };
           };

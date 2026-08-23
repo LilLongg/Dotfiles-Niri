@@ -13,6 +13,7 @@
     ./sddm.nix
     ./services.nix
     ./steam.nix
+    ./tmpfs.nix
     ./users.nix
     ./zram-swap.nix
   ];

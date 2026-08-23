@@ -4,8 +4,6 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "dialout"
-      "tty"
     ];
   };
 

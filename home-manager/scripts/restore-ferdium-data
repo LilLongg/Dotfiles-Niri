@@ -2,7 +2,7 @@
 
 set -l DATA_DIR "$XDG_CONFIG_HOME/Ferdium"
 set -l BACKUP_DIR "$DATA_DIR.bak"
-set -l DST_DIR /dev/shm/ferdium-data
+set -l DST_DIR /tmp/ferdium-data
 
 if not test -L "$DATA_DIR"
     if not test -d "$BACKUP_DIR"
@@ -11,6 +11,7 @@ if not test -L "$DATA_DIR"
         rsync -a --delete "$DATA_DIR"/ "$BACKUP_DIR"
     end
 
+    rm -rf "$DATA_DIR"
     ln -s "$DST_DIR" "$DATA_DIR"
 end
 

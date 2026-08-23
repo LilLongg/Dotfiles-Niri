@@ -18,5 +18,9 @@
         };
       };
     };
+
+    journald = {
+      extraConfig = "Storage=volatile";
+    };
   };
 }
