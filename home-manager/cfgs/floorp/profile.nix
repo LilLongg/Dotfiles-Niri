@@ -35,6 +35,10 @@ in
         {"globalConfigs":{"userInterface":"photon","faviconColor":false,"appliedUserJs":""},"tabbar":{"tabbarStyle":"horizontal","tabbarPosition":"default","multiRowTabBar":{"maxRowEnabled":false,"maxRow":3}},"tab":{"tabScroll":{"enabled":false,"reverse":false,"wrap":false},"tabMinHeight":30,"tabMinWidth":76,"tabPinTitle":false,"tabDubleClickToClose":false,"tabOpenPosition":-1},"uiCustomization":{"navbar":{"position":"top","searchBarTop":false},"display":{"disableFullscreenNotification":false,"deleteBrowserBorder":false},"special":{"optimizeForTreeStyleTab":false,"hideForwardBackwardButton":false,"stgLikeWorkspaces":false},"multirowTab":{"newtabInsideEnabled":false},"bookmarkBar":{"focusExpand":false,"position":"top"},"qrCode":{"disableButton":false}}}
       '';
 
+      "floorp.newtab.configs" = ''
+        {"components":{"topSites":false,"clock":true,"searchBar":true,"firefoxLayout":true},"background":{"type":"random","customImage":null,"fileName":null,"folderPath":null,"selectedFloorp":null,"slideshowEnabled":false,"slideshowInterval":30},"searchBar":{"searchEngine":"default"},"topSites":{"pinned":[{"url":"https://www.cube-soft.jp/","title":"Cubesoft (Sponsor)"},{"url":"https://docs.floorp.app/docs/features/","title":"Floorp Support"}],"blocked":[]}}
+      '';
+
       /**
         **************************************************************************
          * Betterfox                                                                *
