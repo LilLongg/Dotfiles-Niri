@@ -30,26 +30,50 @@
             };
 
             ROOT = {
-              label = "ROOT";
-              end = "-128G";
+              end = "-136G";
               content = {
                 type = "btrfs";
-                extraArgs = [ "-f" ];
-                mountpoint = "/partition-root";
+                extraArgs = [
+                  "-L"
+                  "ROOT"
+                  "-f"
+                ];
                 subvolumes = {
-                  "/rootfs" = {
+                  "/root" = {
                     mountpoint = "/";
+                    mountOptions = [
+                      "subvol=root"
+                      "noatime"
+                      "compress=zstd"
+                    ];
                   };
                   "/nix" = {
                     mountpoint = "/nix";
                     mountOptions = [
-                      "compress=zstd"
+                      "subvol=nix"
                       "noatime"
+                      "nodatacow"
+                      "nodatasum"
+                      "compress=zstd:1"
+                    ];
+                  };
+                  "/log" = {
+                    mountpoint = "/var/log";
+                    mountOptions = [
+                      "subvol=log"
+                      "noatime"
+                      "nodatacow"
+                      "nodatasum"
+                      "compress=zstd:1"
                     ];
                   };
                   "/home" = {
                     mountpoint = "/home";
-                    mountOptions = [ "compress=zstd" ];
+                    mountOptions = [
+                      "subvol=home"
+                      "noatime"
+                      "compress=zstd:1"
+                    ];
                   };
                   "/home/TNonggChann" = { };
                 };
