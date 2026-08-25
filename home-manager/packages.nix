@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-stable,
-  ...
-}:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     ani-cli
@@ -15,7 +11,6 @@
     cpx
     dua
     dysk
-    fastfetch
     ffmpeg-full
     file-roller
     gcc
@@ -24,7 +19,6 @@
     nautilus
     p7zip
     proton-vpn
-    rar
     spotdl
     trash-cli
     uv
@@ -33,6 +27,7 @@
     wl-mirror
     wl-screenrec
     yt-dlp
+    zscroll
 
     (python3.withPackages (
       ps: with ps; [

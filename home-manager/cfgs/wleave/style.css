@@ -11,7 +11,7 @@ window {
 }
 
 button {
-  color: var(--view-fg-color);
+  color: color-mix(in srgb, var(--view-fg-color), var(--fg));
   background-color: var(--bg);
   opacity: 0.925;
   border: none;
@@ -35,25 +35,25 @@ button:active {
 }
 
 button#shutdown {
-  --view-fg-color: #ff8d8d;
+  --view-fg-color: var(--red);
 }
 
 button#hibernate {
-  --view-fg-color: #a8c0ff;
+  --view-fg-color: var(--cyan);
 }
 
 button#reboot {
-  --view-fg-color: #84ffaa;
+  --view-fg-color: var(--green);
 }
 
 button#lock {
-  --view-fg-color: #ffe8b6;
+  --view-fg-color: var(--yellow);
 }
 
 button#logout {
-  --view-fg-color: #ffcca8;
+  --view-fg-color: var(--orange);
 }
 
 button#suspend {
-  --view-fg-color: #caaff9;
+  --view-fg-color: var(--magenta);
 }

@@ -22,6 +22,7 @@ in
       "media.eme.mediadrm.origin-id.enabled" = true;
 
       "signon.autofillForms" = false;
+      "places.history.enabled" = false;
       "browser.contextual-password-manager.enabled" = false;
       "browser.migrate.chrome.payment_methods.enabled" = false;
       "browser.dataFeatureRecommendations.enabled" = false;

@@ -22,10 +22,10 @@
 	--corner-text: 'Midnight';
 
 	/* color of status indicators and window controls */
-  --online-indicator: #23a55a;    /* change to #23a55a for default green */
-	--dnd-indicator: #f13f43;       /* change to #f13f43 for default red */
-	--idle-indicator: #f0b232;      /* change to #f0b232 for default yellow */
-	--streaming-indicator: #593695; /* change to #593695 for default purple */
+  --online-indicator: {{ color2 }};    /* change to #23a55a for default green */
+	--dnd-indicator: {{ color1 | darken(0.1) }};       /* change to #f13f43 for default red */
+	--idle-indicator: {{ color3 }};      /* change to #f0b232 for default yellow */
+	--streaming-indicator: {{ color4 | darken(0.1) }}; /* change to #593695 for default purple */
 
 	/* accent colors */
 	--accent-1: {{ color5 }};                      /* links */
