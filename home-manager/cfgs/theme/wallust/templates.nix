@@ -8,6 +8,10 @@
       src = "cava";
       dst = "${config.xdg.configHome}/cava/config";
     };
+    colors = {
+      src = "colors";
+      dst = "${config.xdg.cacheHome}/wal/colors";
+    };
     helix = {
       src = "helix.toml";
       dst = "${config.xdg.configHome}/helix/themes/wallust.toml";

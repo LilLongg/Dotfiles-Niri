@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -25,7 +24,6 @@
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
       home-manager,
       firefox-addons,
       fcitx5-im-emoji-picker,
@@ -33,16 +31,11 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs-stable = import nixpkgs-stable {
-        inherit system;
-        config.allowUnfree = true;
-      };
     in
     {
       nixosConfigurations.TNonggChann-no-PC = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit
-            pkgs-stable
             inputs
             system
             ;
@@ -65,10 +58,6 @@
         modules = [
           ./home-manager/TNonggChann.nix
         ];
-        extraSpecialArgs = {
-          inherit pkgs-stable;
-          osConfig = self.nixosConfigurations.TNonggChann-no-PC.config;
-        };
       };
     };
 }

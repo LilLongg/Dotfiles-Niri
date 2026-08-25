@@ -214,6 +214,8 @@ environment {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 spawn-at-startup "kitty" "--hold" "fastfetch"
+spawn-sh-at-startup "sleep 2 && ferdium --start-minimized"
+spawn-sh-at-startup "sleep 2 && vesktop --start-minimized"
 spawn-sh-at-startup "$XDG_DATA_HOME/scripts/initbg"
 spawn-sh-at-startup "$XDG_DATA_HOME/scripts/remove-bad-files.py"
 
