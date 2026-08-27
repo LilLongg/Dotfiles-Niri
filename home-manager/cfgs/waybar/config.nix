@@ -122,7 +122,7 @@
         format-wifi = " {essid}";
         format-ethernet = "󰊗 {ipaddr}/{cidr}";
         format-disconnect = "󰖪 off";
-        tooltip-format = "{ifname} via {gwaddr} 󰊗";
+        tooltip-format = "{ifname} via {gwaddr} 󰊗 ";
         tooltip-format-wifi = "Wifi: {essid}\n {bandwidthDownBits}  {bandwidthUpBits}";
         tooltip-format-disconnected = "Disconnected";
         on-click = "kitty --title impala sh -c 'impala'";
@@ -177,7 +177,7 @@
       };
 
       "custom/power_btn" = {
-        "format" = "";
+        "format" = " ";
         "on-click" = "sh -c '(wleave)' & disown";
         "tooltip" = true;
         "tooltip-format" = "Power options";
@@ -201,7 +201,7 @@
 
       "pulseaudio" = {
         "format" = "{icon}{volume}%";
-        "format-muted" = "";
+        "format-muted" = " ";
         "tooltip" = false;
         "on-click" = "volumectl toggle-mute";
         "on-scroll-up" = "volumectl up";
@@ -225,7 +225,7 @@
       "pulseaudio#microphone" = {
         "format" = "{format_source}";
         "format-source" = " {volume}%";
-        "format-source-muted" = "";
+        "format-source-muted" = " ";
         "on-click" = "volumectl -m toggle-mute";
         "on-scroll-up" = "volumectl -m up";
         "on-scroll-down" = "volumectl -m down";

@@ -7,7 +7,7 @@
         "$HOME/.config/hypr/batteryColor.conf"
       ];
 
-      "$font" = "Pixelon";
+      "$font" = "Maple Mono NF CN";
 
       # GENERAL
       general = {

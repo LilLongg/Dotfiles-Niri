@@ -19,7 +19,6 @@
     nautilus
     p7zip
     proton-vpn
-    spotdl
     trash-cli
     uv
     viewnior
@@ -27,7 +26,6 @@
     wl-mirror
     wl-screenrec
     yt-dlp
-    zscroll
 
     (python3.withPackages (
       ps: with ps; [

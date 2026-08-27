@@ -9,8 +9,8 @@
     cursorTheme.size = 24;
 
     font = {
-      name = "Iosevka Nerd Font";
-      size = 13;
+      name = "Maple Mono NF CN";
+      size = 12;
     };
   };
 

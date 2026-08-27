@@ -2,8 +2,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Iosevka Nerd Font";
-      size = 13;
+      name = "Maple Mono NF CN";
+      size = 12;
     };
     keybindings = {
       "ctrl+tab" = "send_text normal, application '\\x1b[9;5u'";

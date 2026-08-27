@@ -1,9 +1,9 @@
 configuration {
-  font: "Iosevka Nerd Font SemiBold 15";
+  font: "Maple Mono NF CN SemiBold 15";
 }
 
 element-text {
-  font: "Iosevka Nerd Font SemiBold 11";
+  font: "Maple Mono NF CN SemiBold 11";
 }
 
 /*****----- Configuration -----*****/

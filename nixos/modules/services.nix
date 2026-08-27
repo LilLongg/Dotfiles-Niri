@@ -23,4 +23,22 @@
       extraConfig = "Storage=volatile";
     };
   };
+
+  systemd.services.restart-auto-cpufeq-on-resume = {
+    description = "Restart auto-cpufreq when the system resume from hibernation or suspend";
+
+    after = [
+      "hibernate.target"
+      "sleep.target"
+    ];
+    wantedBy = [
+      "hibernate.target"
+      "sleep.target"
+    ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.systemd}/bin/systemctl restart auto-cpufreq";
+      RemainAfterExit = true;
+    };
+  };
 }

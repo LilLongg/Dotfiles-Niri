@@ -98,20 +98,6 @@
 }
 
 body {
-	--font: "Sarasa Fixed CL",
-          "Sarasa Fixed J",
-          "Sarasa Fixed K",
-          "Sarasa Fixed HC",
-          "Sarasa Fixed SC",
-          "Sarasa Fixed TC",
-          "Symbols Nerd Font",
-          "Noto Color Emoji";
-	--code-font: "Sarasa Mono CL",
-          	   "Sarasa Mono J",
-          	   "Sarasa Mono K",
-          	   "Sarasa Mono HC",
-          	   "Sarasa Mono SC",
-          	   "Sarasa Mono TC",
-          	   "Symbols Nerd Font",
-          	   "Noto Color Emoji";
+	--font: "Maple Mono NF CN", "Noto Color Emoji";
+	--code-font: "Maple Mono NF CN", "Noto Color Emoji";
 }

@@ -1,27 +1,29 @@
 "attribute" = "base09"
 "comment" = { fg = "base03", modifiers = ["italic"] }
-"constant" = "base09"
-"constant.character.escape" = "base0C"
-"constant.numeric" = "base09"
-"constructor" = "base0D"
+"constant" = { fg = "base09", modifiers = ["italic"] }
+"constant.character.escape" = { fg = "base0C", modifiers = ["italic"] }
+"constant.numeric" = { fg = "base09", modifiers = ["italic"] }
+"constructor" = { fg = "base0D", modifiers = ["italic"] }
 "debug" = "base03"
 "diagnostic" = { modifiers = ["underlined"] }
 "diff.delta" = "base09"
 "diff.minus" = "base08"
 "diff.plus" = "base0B"
 "error" = "base08"
-"function" = "base0D"
+"function" = { fg = "base0D", modifiers = ["italic"] }
 "hint" = "base03"
 "info" = "base0D"
-"keyword" = "base0E"
-"label" = "base0E"
+"keyword" = { fg = "base0E", modifiers = ["italic"] }
+"label" = { fg = "base0E", modifiers = ["italic"] }
 "namespace" = "base0E"
-"operator" = "base05"
-"special" = "base0D"
-"string" = "base09"
-"tag" = "base08"
-"type" = "base0A"
+"operator" = { fg = "base05", modifiers = ["italic"] }
+"punctuation" = { modifiers = ["italic"] }
+"special" = { fg = "base0D", modifiers = ["italic"] }
+"string" = { fg = "base09", modifiers = ["italic"] }
+"tag" = { fg = "base08", modifiers = ["italic"] }
+"type" = { fg = "base0A", modifiers = ["italic"] }
 "variable" = "base08"
+"variable.builtin" = { modifiers = ["italic"] }
 "variable.other.member" = "base0D"
 "warning" = "base09"
 
