@@ -13,4 +13,5 @@
       tray = true;
     };
   };
+  imports = [ ./vesktop-on-ram.nix ];
 }

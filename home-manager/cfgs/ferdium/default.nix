@@ -3,4 +3,5 @@
   home.packages = with pkgs; [
     ferdium
   ];
+  imports = [ ./ferdium-on-ram.nix ];
 }
