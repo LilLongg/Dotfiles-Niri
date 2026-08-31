@@ -1,23 +1,29 @@
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
-#include <string_view>
-#include <utility>
+#include <memory>
+#include <print>
+#include <sstream>
 
 int main() {
-  FILE    *fp       = popen("cat /proc/uptime", "r");
-  char    *time_str = 0;
-  uint64_t uptime, _;
+  std::unique_ptr<FILE, decltype(&pclose)> fp(popen("cat /proc/uptime", "r"), pclose);
+  char                                     buffer[64];
+  std::fgets(buffer, sizeof(buffer), fp.get());
 
-  getline(&time_str, &_, fp);
-  sscanf(time_str, "%lu", &uptime);
-  pclose(fp);
-  free(time_str);
+  long uptime;
+  std::istringstream(buffer) >> uptime;
 
-  auto [hours, minutes] = std::div(uptime / 60, 60L);
-  if (hours != 0)
-    printf("%lu %s%s, ", hours, "hour", hours > 1 ? "s" : "");
-  printf("%lu %s%s", minutes, "minute", minutes != 1 ? "s" : "");
-  puts("");
+  auto [total_hours, minutes] = std::div(uptime / 60, 60L);
+  auto [days, hours]          = std::div(total_hours, 60L);
+  int               cnt       = 0;
+  std::stringstream output;
+  for (auto [key, value] : std::initializer_list<std::pair<std::string_view, long>>{
+           std::make_pair("day", days),
+           std::make_pair("hour", hours),
+           std::make_pair("minute", minutes) }) {
+    if (!value)
+      continue;
+    std::print("{}{} {}{}", cnt++ ? ", " : "", value, key, value != 1 ? "s" : "");
+  }
+
+  if (cnt == 0)
+    std::print("0 minutes");
+  std::println();
 }

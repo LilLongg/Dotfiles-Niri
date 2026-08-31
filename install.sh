@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 git lfs clone https://github.com/LilLongg/Wallpaper.git ~/Wallpaper
-
-mkdir -p ~/.venv ~/.cache/wpp ~/Pictures/Screenshots ~/Videos/Records
 rm -rf ~/.config/fish
 
 cd ~/Dotfiles

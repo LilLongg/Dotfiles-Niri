@@ -1,25 +1,21 @@
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
-#include <string_view>
-#include <utility>
+#include <chrono>
+#include <memory>
+#include <print>
+#include <sstream>
+
+namespace ch = std::chrono;
 
 int main() {
-  FILE    *fp       = popen("stat -c %w /", "r");
-  char    *date_str = 0;
-  uint64_t _;
+  std::unique_ptr<FILE, decltype(&pclose)> fp(popen("stat -c %w /", "r"), pclose);
+  char                                     buffer[64];
+  std::fgets(buffer, sizeof(buffer), fp.get());
 
-  getline(&date_str, &_, fp);
-  tm start_time;
-  strptime(date_str, "%F %T %z", &start_time);
-  pclose(fp);
-  free(date_str);
+  ch::time_point<ch::system_clock> start_time;
+  std::istringstream(buffer) >> ch::parse("%F %T %z", start_time);
+  auto current_time = ch::system_clock::now();
+  auto system_age   = ch::duration_cast<ch::minutes>(current_time - start_time).count();
 
-  time_t current_time = time(0);
-  long   duration     = difftime(current_time, timegm(&start_time));
-
-  auto [total_hours, age_minutes]   = std::div(duration / 60, 60L);
+  auto [total_hours, age_minutes]   = std::div(system_age, 60L);
   auto [total_days, age_hours]      = std::div(total_hours, 24L);
   auto [total_months, age_days]     = std::div(total_days, 61L);
   total_months                    <<= 1;
@@ -40,11 +36,11 @@ int main() {
     if (!value)
       continue;
 
-    printf("%s%ld %s%s", cnt++ ? ", " : "", value, key.data(), value > 1 ? "s" : "");
+    std::print("{}{} {}{}", cnt++ ? ", " : "", value, key, value > 1 ? "s" : "");
 
     if (cnt == 3)
       break;
   }
 
-  puts("");
+  std::println();
 }

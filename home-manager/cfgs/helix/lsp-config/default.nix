@@ -1,6 +1,6 @@
 {
-  home.file.".clang-format".source = ./.clang-format;
   imports = [
+    ./clang.nix
     ./ruff.nix
     ./ty.nix
   ];

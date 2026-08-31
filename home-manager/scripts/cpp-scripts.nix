@@ -1,13 +1,13 @@
 { stdenv }:
 stdenv.mkDerivation {
   pname = "User cpp scripts";
-  version = "1.0.0";
+  version = "2.0.0";
   src = ./.;
 
   installPhase = ''
-    mkdir -p $out/bin;
+    mkdir -p $out/bin
 
-    g++ -O3 $src/system-age.cc -o $out/bin/system-age
-    g++ -O3 $src/uptime-fmt.cc -o $out/bin/uptime-fmt
+    g++ -O3 -std=c++23 $src/system-age.cc -o $out/bin/system-age
+    g++ -O3 -std=c++23 $src/uptime-fmt.cc -o $out/bin/uptime-fmt
   '';
 }
