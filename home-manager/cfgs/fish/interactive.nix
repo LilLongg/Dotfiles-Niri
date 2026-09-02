@@ -29,6 +29,8 @@
 
       set -q VIRTUAL_ENV_DISABLE_PROMPT
       or set -g VIRTUAL_ENV_DISABLE_PROMPT true
+
+      devenv hook fish | source
     '';
 
     shellAliases =

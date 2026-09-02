@@ -32,10 +32,8 @@ int main() {
            std::make_pair("day", age_days),
            std::make_pair("hour", age_hours),
            std::make_pair("minute", age_minutes) }) {
-
     if (!value)
       continue;
-
     std::print("{}{} {}{}", cnt++ ? ", " : "", value, key, value > 1 ? "s" : "");
 
     if (cnt == 3)

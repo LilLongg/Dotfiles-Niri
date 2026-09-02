@@ -20,6 +20,9 @@ function fish_prompt
     if test $VIRTUAL_ENV
         printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
     end
+    if test $DEVENV_PROMPT
+        printf "(%s) " (set_color blue)(echo $DEVENV_PROMPT)(set_color normal)
+    end
     if test $last_status -ne 0
         set_color red
     else

@@ -9,6 +9,7 @@
     brightnessctl
     cava
     cpx
+    devenv
     dua
     dysk
     ffmpeg-full

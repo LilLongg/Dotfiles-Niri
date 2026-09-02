@@ -12,14 +12,6 @@
       src = "colors";
       dst = "${config.xdg.cacheHome}/wal/colors";
     };
-    helix = {
-      src = "helix.toml";
-      dst = "${config.xdg.configHome}/helix/themes/wallust.toml";
-    };
-    hyprlock = {
-      src = "hyprlock.conf";
-      dst = "${config.xdg.configHome}/hypr/colors.conf";
-    };
     gtk-dark = {
       src = "gtk.css";
       dst = "${config.xdg.dataHome}/themes/linea-nord-color/general/dark.css";
@@ -31,6 +23,14 @@
     gtkrc = {
       src = "gtkrc";
       dst = "${config.xdg.dataHome}/themes/linea-nord-color/gtk-2.0/gtkrc";
+    };
+    helix = {
+      src = "helix.toml";
+      dst = "${config.xdg.configHome}/helix/themes/wallust.toml";
+    };
+    hyprlock = {
+      src = "hyprlock.conf";
+      dst = "${config.xdg.configHome}/hypr/colors.conf";
     };
     kitty = {
       src = "kitty.conf";
