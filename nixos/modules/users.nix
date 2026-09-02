@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  users.defaultUserShell = pkgs.fish;
   users.users.TNonggChann = {
     isNormalUser = true;
     extraGroups = [
@@ -6,8 +7,6 @@
       "networkmanager"
     ];
   };
-
-  users.defaultUserShell = pkgs.fish;
   programs.fish = {
     enable = true;
     generateCompletions = true;

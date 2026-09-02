@@ -10,12 +10,10 @@
       pkgsi686Linux.intel-vaapi-driver
     ];
   };
-
   hardware.enableRedistributableFirmware = true;
   boot.kernelParams = [ "i915.enable_guc=3" ];
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
   };
-
   services.xserver.videoDrivers = [ "modesetting" ];
 }

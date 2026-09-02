@@ -28,6 +28,8 @@
 
   home = {
     pointerCursor = {
+      enable = true;
+      gtk.enable = true;
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
       size = 24;

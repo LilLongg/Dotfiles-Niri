@@ -5,7 +5,6 @@
       enable = true;
       includeUserConf = true;
     };
-
     packages = with pkgs; [
       (stdenv.mkDerivation {
         name = "Some-Random-System-Fonts";

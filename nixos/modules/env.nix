@@ -12,7 +12,6 @@
     "/share/xdg-desktop-portal"
     "/share/applications"
   ];
-
   gtk.iconCache.enable = true;
   security.polkit.enable = true;
 }
