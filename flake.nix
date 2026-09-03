@@ -1,25 +1,20 @@
 {
   description = "Config...";
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     firefox-addons = {
       url = "github:osipog/nix-firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     fcitx5-im-emoji-picker = {
       url = "github:lillongg/nix-fcitx5-im-emoji-picker";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
   outputs =
     {
       self,
@@ -40,12 +35,10 @@
             system
             ;
         };
-
         modules = [
           ./nixos/configuration.nix
         ];
       };
-
       homeConfigurations.TNonggChann = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           inherit system;

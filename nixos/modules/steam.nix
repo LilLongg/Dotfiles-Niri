@@ -3,14 +3,6 @@
     steam = {
       enable = true;
       extest.enable = true;
-      gamescopeSession = {
-        enable = true;
-        args = [
-          "--mangoapp"
-          "--adaptive-sync"
-          "--fullscreen"
-        ];
-      };
       package = pkgs.steam.override {
         extraArgs = "-system-composer";
       };
@@ -20,7 +12,6 @@
     };
     gamescope = {
       enable = true;
-      enableWsi = true;
       capSysNice = false;
       args = [
         "--mangoapp"
@@ -28,6 +19,7 @@
         "--fullscreen"
       ];
       env = {
+        ENABLE_GAMESCOPE_WSI = "1";
         PROTON_ENABLE_WAYLAND = "1";
         PROTON_DXVK_LOWLATENCY = "1";
         PROTON_NO_WM_DECORATION = "1";

@@ -1,4 +1,7 @@
 { pkgs, ... }: {
+  programs.dconf.enable = true;
+  gtk.iconCache.enable = true;
+  security.polkit.enable = true;
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
@@ -12,6 +15,4 @@
     "/share/xdg-desktop-portal"
     "/share/applications"
   ];
-  gtk.iconCache.enable = true;
-  security.polkit.enable = true;
 }

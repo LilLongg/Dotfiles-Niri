@@ -16,6 +16,7 @@
     ./mangohud
     ./media
     ./niri
+    ./nix
     ./obs-studio
     ./onlyoffice
     ./rofi
